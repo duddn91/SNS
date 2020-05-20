@@ -18,7 +18,7 @@
 	  <button type="submit" id="loginBtn">로그인</button>
 	  <button type="button" onclick="location.href='member/signUp'">회원가입</button>
 	</form>
-	dasasd
+	dasasddsadsada
 
 </body>
 </html>
