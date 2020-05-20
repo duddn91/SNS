@@ -14,8 +14,8 @@
 		<org.aspectj-version>1.9.2</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
-
-	<!--  오려ㅛ어애ㅓㄴㅇㄹ마ㅣ -->
+	
+	<!-- ad -->
 	<!-- 오라클 외부 저장소를 설정한다. -->
 	<repositories>
 		<repository>
