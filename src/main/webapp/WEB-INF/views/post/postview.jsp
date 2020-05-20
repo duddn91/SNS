@@ -186,12 +186,20 @@ body { padding-top: 70px;
 
 
 
+<<<<<<< HEAD
 <!-- 에휴 깃허브 언제하냐~ -->
 <c:forEach var="vo" items="${postList}">
 <c:if test="${postList != null}">
 	<table id="post${vo.p_no}" class="table borderless scrolling" align="center" cellpadding="5px" data-no="${vo.p_no}">
 		<tr>
 		${vo.p_no}
+=======
+
+<c:forEach var="vo" items="${postList}">
+<c:if test="${postList != null}">
+	<table id="post${vo.p_no}" class="table borderless scrolling" align="center" cellpadding="5px" data-no="${vo.p_no}">
+		<tr>
+>>>>>>> refs/remotes/origin/master
 			<td align="center" width="100">프로필사진</td> 
 			<td align="center" width="100">${vo.p_id}</td> 
 			<td align="center">
