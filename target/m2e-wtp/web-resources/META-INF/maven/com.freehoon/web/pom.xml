@@ -14,7 +14,7 @@
 		<org.aspectj-version>1.9.2</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
-
+	<!-- 오지은 암것도 모르죠? -->
 	<!-- 오라클 외부 저장소를 설정한다. -->
 	<repositories>
 		<repository>
@@ -60,7 +60,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.3</version>
+			<version>2.9.10.4</version>
 		</dependency>	
 
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
