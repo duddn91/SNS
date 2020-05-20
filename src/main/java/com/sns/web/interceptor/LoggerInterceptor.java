@@ -13,7 +13,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class LoggerInterceptor extends HandlerInterceptorAdapter{
   
 	private Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
-  	//전처리기
+
+	// 하잉
+	//전처리기
 	@Override 
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception { 
