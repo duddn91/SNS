@@ -191,6 +191,7 @@ body { padding-top: 70px;
 <c:if test="${postList != null}">
 	<table id="post${vo.p_no}" class="table borderless scrolling" align="center" cellpadding="5px" data-no="${vo.p_no}">
 		<tr>
+		${vo.p_no}
 			<td align="center" width="100">프로필사진</td> 
 			<td align="center" width="100">${vo.p_id}</td> 
 			<td align="center">
