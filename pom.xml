@@ -12,10 +12,10 @@
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.1.4.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.9.2</org.aspectj-version>
-		<org.slf4j-version>1.7.25</org.slf4j-version>
+		<org.slf4j-version>1.7.25</org.slf4j-version>s
 	</properties>
 	
-	<!--asd  -->
+	<!-- dfddddd -->asasa
 	<!-- 오라클 외부 저장소를 설정한다. -->
 	<repositories>
 		<repository>
