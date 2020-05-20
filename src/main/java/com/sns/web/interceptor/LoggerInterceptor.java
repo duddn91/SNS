@@ -14,7 +14,7 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter{
   
 	private Logger logger = LoggerFactory.getLogger(LoggerInterceptor.class);
 
-	// 하잉
+	// 하잉zzz
 	//전처리기
 	@Override 
 	public boolean preHandle(HttpServletRequest request,
