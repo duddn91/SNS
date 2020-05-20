@@ -145,6 +145,8 @@ body { padding-top: 70px;
 </head>
 <body>
 
+
+<!-- 무한스크롤 안되는데?ㅋㅋ -->
 <nav class="navbar navbar-fixed-top bg-info">
 	<div class="container-fluid">
 	    <p class="navbar-text">☆★stargram☆★</p>   
@@ -186,20 +188,11 @@ body { padding-top: 70px;
 
 
 
-<<<<<<< HEAD
 <!-- 에휴 깃허브 언제하냐~ -->
 <c:forEach var="vo" items="${postList}">
 <c:if test="${postList != null}">
 	<table id="post${vo.p_no}" class="table borderless scrolling" align="center" cellpadding="5px" data-no="${vo.p_no}">
 		<tr>
-		${vo.p_no}
-=======
-
-<c:forEach var="vo" items="${postList}">
-<c:if test="${postList != null}">
-	<table id="post${vo.p_no}" class="table borderless scrolling" align="center" cellpadding="5px" data-no="${vo.p_no}">
-		<tr>
->>>>>>> refs/remotes/origin/master
 			<td align="center" width="100">프로필사진</td> 
 			<td align="center" width="100">${vo.p_id}</td> 
 			<td align="center">
@@ -234,7 +227,6 @@ body { padding-top: 70px;
 		<tr>
 			<td colspan="3" id="p_no" data-no="${vo.p_no}">
 				<a onclick="getReply(${vo.p_no})" style="cursor: pointer;">댓글보기 <span class="badge">${vo.p_replycnt}</span></a><br>
-				
 			</td>
 		</tr>
 		
