@@ -15,7 +15,7 @@
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 
-	<!-- ㄻㄴㅇ림아;ㅓㅣ;ㅁㅇ나ㅓㄹ -->
+	<!--  오려ㅛ어애ㅓㄴㅇㄹ마ㅣ -->
 	<!-- 오라클 외부 저장소를 설정한다. -->
 	<repositories>
 		<repository>
