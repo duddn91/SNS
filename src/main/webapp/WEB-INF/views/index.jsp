@@ -9,7 +9,7 @@
 <body>
 
 index
-
+싸발
 <button type="button" onclick="location.href='login'">로그인</button>
 
 </body>
