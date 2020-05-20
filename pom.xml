@@ -15,7 +15,7 @@
 		<org.slf4j-version>1.7.25</org.slf4j-version>s
 	</properties>
 	
-	<!-- dfddddd -->
+	<!-- dfddddd -->asasa
 	<!-- 오라클 외부 저장소를 설정한다. -->
 	<repositories>
 		<repository>
