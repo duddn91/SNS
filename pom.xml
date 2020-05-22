@@ -3,16 +3,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.freehoon</groupId>
+	<groupId>com.sns</groupId>
 	<artifactId>web</artifactId>
-	<name>freehoon</name>
+	<name>sns</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.1.4.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.9.2</org.aspectj-version>
-		<org.slf4j-version>1.7.25</org.slf4j-version>s
+		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
 	
 	<!-- 종민이형이 바꿈  -->
@@ -125,6 +125,18 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+
+		
 
 		<!-- AspectJ -->
 		<dependency>
