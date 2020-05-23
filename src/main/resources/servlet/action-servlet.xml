@@ -17,7 +17,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/photo/**" location="file:///D:/kookgi_8gi_BYW/spring/ec-workspace/SNS_pj/src/main/webapp/resources/PostingImages/" />
 	<resources mapping="/css/**" location="/WEB-INF/css/" />
-	<resources mapping="/imags/**" location="/WEB-INF/imags/" />
+	<resources mapping="/imgs/**" location="/WEB-INF/imgs/" />
 	
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property value="/WEB-INF/views/" name="prefix"/>
