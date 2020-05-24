@@ -3,8 +3,8 @@
 <html>
 <head>
 
-<!-- view 바꿈 -->
 <!-- oje -> oje -->
+<!-- 왜 안올라가아아아ㅏㅏㅏㅏㅏㅏ -->
 
    <!--  <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
