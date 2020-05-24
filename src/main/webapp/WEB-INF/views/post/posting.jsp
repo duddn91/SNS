@@ -2,115 +2,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 
-<!-- css 필터 적용 링크-->
-<link rel="stylesheet" href="https://cssgram-cssgram.netdna-ssl.com/cssgram.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.10/cssgram.min.css">
+<!-- view 바꿈 -->
+<!-- oje -> oje -->
 
-<title>Posting Page</title>
+   <!--  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+<title>Instagram Posting</title>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/new_post.css">
+<link rel="shortcut icon" href="/imgs/instagram.png">
 
-//	이미지 업로드 미리보기
-	$(function() {
-          $("#imageFile").on('change', function(){
-              readURL(this);
-          });
-      }); 
 
-      function readURL(input) {
-          if (input.files && input.files[0]) {		// 선택된 파일이 있다면,
-          var reader = new FileReader();			// 파일을 읽어서,
-          
-          reader.onload = function (e) {			// #preview 이미지 태그에 들어있는 사진과 바꾸기
-                  $('#preview').attr('src', e.target.result);
-              }
-            reader.readAsDataURL(input.files[0]);
-          }
-      }
+</head>
 
-//	리셋 버튼 누르면 미리보기 창 비워주기      
-      function formDelete() {
-          $('#preview').attr('src', "uploadpath/temp.png"); 			// 임시 이미지
-	  	document.getElementById("figure").className = "noneClass";	// 필터 취소
-		document.getElementById("filterValue").value = "0";	
-      }
-            
-//	폼 입력 검사
-    function formCheck() {	
-	
-	    var fileNm = $("#imageFile").val();
-    	var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();	// 확장자 가져오기
-
-    	if ($("#content").val() == "") {
-			alert("내용을 반드시 적어주세요.")
-			fr.p_content.focus();
-			return false;
-		} else if ($("#imageFile").val() == "") {
-			alert("이미지 파일을 반드시 업로드해주세요.")
-			return false;		 	
-		} else if (!(ext == "jpg" || ext == "png" || ext == "jpeg")) {			
-			alert("이미지 파일(jpg, png ...) 확장자만 가능합니다.")
-			return false;		 				
-		} else {
-			document.fr.submit();
-		}	
-	}
-	
-//	원본 사진
-	function filter0() {
-		document.getElementById("figure").className = "noneClass";
-		document.getElementById("filterValue").value = "0";	
-	}
-
-//	aden 필터
-	function filter1() {
-		document.getElementById("figure").className = "aden";
-		document.getElementById("filterValue").value = "1";
-		
-	}
-	
-//	brooklyn 필터	
-	function filter2() {
-		document.getElementById("figure").className = "brooklyn";
-		document.getElementById("filterValue").value = "2";
-	}
-
-//	lofi 필터
-	function filter3() {
-		document.getElementById("figure").className = "lofi";
-		document.getElementById("filterValue").value = "3";
-	}
-	
-//	maven 필터	
-	function filter4() {
-		document.getElementById("figure").className = "maven";
-		document.getElementById("filterValue").value = "4";
-	}
-
-//	lark 필터	
-	function filter5() {
-		document.getElementById("figure").className = "lark";
-		document.getElementById("filterValue").value = "5";
-	}
-
-//	perpetua 필터	
-	function filter6() {
-		document.getElementById("figure").className = "perpetua";
-		document.getElementById("filterValue").value = "6";
-	}
-
-//	willow 필터	
-	function filter7() {
-		document.getElementById("figure").className = "willow";
-		document.getElementById("filterValue").value = "7";
-	}
-
-    </script>
-
-	<style>
+<style>
 	
 	/*
 	인스타그램 픽셀 사이즈
@@ -132,57 +41,137 @@
 			
 	</style>
 
-</head>
 <body>
 
-<form action="postingOK" name="fr" method="post" enctype="multipart/form-data" >
-<table width="500" align="center" border="1" cellpadding="5" cellspacing="0">
+<section id="container">
+	
+	 <header id="header">
+	        <section class="h_inner">
+	
+	            <h1 class="logo">
+	                <a href="index.jsp">
+	                    <div class="sprite_insta_icon"></div>
+	                    <div>
+	                        <div class="sprite_write_logo"></div>
+	                    </div>
+	                </a>
+	            </h1>
+	
+	            <div class="search_field">
+	                <input type="text" placeholder="검색" tabindex="0">
+	
+	                <div class="fake_field">
+	                    <span class=sprite_small_search_icon></span>
+	                    <span>검색</span>
+	                </div>
+	            </div>
+	
+	            <div class="right_icons">
+	                <a href="posting.jsp"><div class="sprite_camera_icon"></div></a> <!--  아예 안되게? -->
+	                <a href="login.jsp"><div class="sprite_compass_icon"></div></a>
+	                <a href="follow.jsp"><div class="sprite_heart_icon_outline"></div></a>
+	                <a href="profile.jsp"><div class="sprite_user_icon_outline"></div></a>
+	            </div>
+	        </section>
+	    </header>
 
-	<tr><th colspan="2">새 게시물</th></tr>
-	<tr>
-		<td width="100">아이디</td>
-		<td width="400">
-			<lable name="p_id">${login.m_id}</lable>
-			<input type="hidden" name="p_id" value="${login.m_id}">
-		</td>	<!-- 나중에 프로필사진 + 이름 값 받아오기 -->
-	</tr>
-	<tr>
-		<td>사진 선택</td>
-		<td>
-		<input type="file" name="file" id="imageFile" accept="img/*"/> 	<!-- "imageFile" accept="img/*" -->
- 		<figure id="figure" class="noneClass">
- 		<img id= "preview" src="/photo/temp.png" alt="your image" >
- 		</figure>		
-		</td>	
-	</tr>
-	<tr>
-		<td colspan="2" align="center">
-			<input type="button" value="원본"  onclick="filter0()"/>
-			<input type="button" value="Aden"  onclick="filter1()"/>
-			<input type="button" value="Brooklyn"  onclick="filter2()"/>
-			<input type="button" value="Lofi"  onclick="filter3()"/>
-			<input type="button" value="Maven"  onclick="filter4()"/>
-			<input type="button" value="Lark"  onclick="filter5()"/>
-			<input type="button" value="Perpetua"  onclick="filter6()"/>
-			<input type="button" value="Willow"  onclick="filter7()"/>
-		</td>
-	</tr>
-	<tr>
-		<td>내용</td>
-		<td><textarea rows="10" cols="50" name="p_content" id="content" style="resize: none;"></textarea></td>
-	</tr>	
-	<tr>
-		<td colspan="2" align="center">
+
+    <div id="main_container">
+
+        <div class="post_form_container">
+            <form action="postingOK" class="post_form" name="fr" method="post" enctype="multipart/form-data" >
+                <div class="title">
+                    NEW POST
+                </div>
+                <div>
+				<input type="hidden" name="p_id" value="${login.m_id}">
+                </div>
+                <div class="preview">
+                    <div class="upload">
+                        <div class="post_btn">
+                            <div class="plus_icon">
+                                <span></span>
+                                <span></span>
+                            </div>
+                             <p>포스트 이미지 추가</p> 
+                            <canvas id="imageCanvas"></canvas>                             
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <input type="file" name="file" id="id_photo" required="required" >
+                </p>
+                <p>
+                    <textarea name="p_content" id="content" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다.
+#태그명 을 통해서 검색 태그를 등록할 수 있습니다.
+예시 : I # love # insta!"></textarea>
+
+                </p>
 			<input type="button" value="upload" onclick="formCheck()"/>
 			<input type="reset" value="rewrite" onclick="formDelete()"/>
 			<input type="hidden" id="filterValue" value="0" name="p_filter"> <!-- 0이면 원본, 1~7 필터 지정값 -->
-		</td>
-	</tr>
-</table>
-</form>
+            </form>
 
+        </div>
+
+    </div>
+    
+</section>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" >
+
+
+      
+//폼 입력 검사
+function formCheck() {	
+
+    var fileNm = $("#id_photo").val();
+	var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();	// 확장자 가져오기
+
+	if ($("#content").val() == "") {
+		alert("내용을 반드시 적어주세요.")
+		fr.p_content.focus();
+		return false;
+	} else if ($("#id_photo").val() == "") {
+		alert("이미지 파일을 반드시 업로드해주세요.")
+		return false;		 	
+	} else if (!(ext == "jpg" || ext == "png" || ext == "jpeg")) {			
+		alert("이미지 파일(jpg, png ...) 확장자만 가능합니다.")
+		return false;		 				
+	} else {
+		document.fr.submit();
+	}	
+}
+
+		var fileInput  = document.querySelector( "#id_photo" ),
+		button     = document.querySelector( ".input-file-trigger" ),
+		the_return = document.querySelector(".file-return");
+		
+		// Show image
+		fileInput.addEventListener('change', handleImage, false);
+		var canvas = document.getElementById('imageCanvas');
+		var ctx = canvas.getContext('2d');
+		
+		
+		function handleImage(e){
+		var reader = new FileReader();
+		reader.onload = function(event){
+		    var img = new Image();
+		    // var imgWidth =
+		    img.onload = function(){
+		        canvas.width = 300;
+		        canvas.height = 300;
+		        ctx.drawImage(img,0,0,300,300);
+		    };
+		    img.src = event.target.result;
+		    // img.width = img.width*0.5
+		    // canvas.height = img.height;
+		};
+		reader.readAsDataURL(e.target.files[0]);
+		}
+
+
+</script>
 </body>
 </html>
-
-
 
