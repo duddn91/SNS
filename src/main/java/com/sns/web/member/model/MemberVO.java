@@ -11,7 +11,6 @@ public class MemberVO {
 	private String m_pw;
 	private String m_email;
 	private String m_birth;
-	private String m_gender;
 	private String m_phone;
 	private String m_profile;
 	
@@ -52,12 +51,6 @@ public class MemberVO {
 	public void setM_birth(String m_birth) {
 		this.m_birth = m_birth;
 	}
-	public String getM_gender() {
-		return m_gender;
-	}
-	public void setM_gender(String m_gender) {
-		this.m_gender = m_gender;
-	}
 	public String getM_phone() {
 		return m_phone;
 	}
@@ -70,12 +63,15 @@ public class MemberVO {
 	public void setM_profile(String m_profile) {
 		this.m_profile = m_profile;
 	}
-	
 	@Override
 	public String toString() {
-		return "MemberVO [m_no=" + m_no + ", m_id=" + m_id + ", m_pw=" + m_pw + ", m_email=" + m_email + ", m_birth="
-				+ m_birth + ", m_gender=" + m_gender + ", m_phone=" + m_phone + ", m_profile=" + m_profile + "]";
+		return "MemberVO [m_no=" + m_no + ", m_name=" + m_name + ", m_id=" + m_id + ", m_pw=" + m_pw + ", m_email="
+				+ m_email + ", m_birth=" + m_birth + ", m_phone=" + m_phone + ", m_profile=" + m_profile + "]";
 	}
+	
+	
+	
+	
 	
 	
 }

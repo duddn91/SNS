@@ -35,7 +35,7 @@ public class MemberController {
 		
 		model.addAttribute("memberVO", new MemberVO());
 	    
-		return "member/signUp2";
+		return "member/signUp";
 	}
 	
 	// 회원정보 db에 insert
@@ -63,7 +63,7 @@ public class MemberController {
 	
 	// 로그인 처리하는 부분
     @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String loginCheck(HttpSession session,MemberVO memberVO) throws Exception{
+    public String loginCheck(HttpSession session, MemberVO memberVO) throws Exception{
         String returnURL = "";
         logger.debug("loginCheck() 실행");
         if ( session.getAttribute("login") != null ){
@@ -83,6 +83,15 @@ public class MemberController {
           
         return returnURL;
     }
+    
+    @RequestMapping("/findpw")
+    public String findpwPage(Model model) throws Exception {
+    	
+    	logger.debug("memberController에 findpwPage() 실행");
+    	
+    	return "member/findpw";
+    }
+    
     
     // 마이 페이지
  	@RequestMapping("/mypage")
