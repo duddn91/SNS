@@ -1,5 +1,8 @@
 package com.sns.web.member.controller;
 
+
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -86,10 +89,31 @@ public class MemberController {
     
     // 마이 페이지
  	@RequestMapping("/mypage")
- 	public String myPage(HttpSession session) throws Exception {
+ 	public String myPage(HttpSession session, Model model) throws Exception { 		
  		
  		logger.debug("memberController에 myPage() 실행");
  		
+ 		int startNo = memberService.getPostNo();		// 회원별로 등록된 게시물 개수를 가져온다. 기본	값 0
+ 		
+ 		List<MemberVO> mypostList = memberService.selectList(startNo);	// 리스트로 만들어서 가져온다.
+ 		model.addAttribute("mypostList", mypostList);
+ 		
+ 		
  		return "member/mypage";
  	}
+ 	
+ 	// 비밀번호 변경 페이지
+ 	@RequestMapping("/findPW")
+ 	public String findPW(HttpSession session, Model model) {
+
+ 		logger.debug("memberController에 findPW() 실행");
+ 		
+ 		return "member/findPW";
+ 	}
+ 	
+ 	
+ 	// 비밀번호 변경 처리 부분
+ 	
+ 	
+ 	
 }

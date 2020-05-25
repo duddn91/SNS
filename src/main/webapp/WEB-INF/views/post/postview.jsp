@@ -13,15 +13,30 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <style>
 
-body { padding-top: 70px; 
-		width: 900px;		
-		margin: 0 auto;
-}
+		body { padding-top: 70px; 
+				width: 900px;		
+				margin: 0 auto;
+		}
+
+		img {
+			width: 510px; 
+			height: 510px;		
+		}
+		
+		/* 이미지 크기랑 똑같이 맞춰주기 */	
+		figure {
+			width: 510px; 
+			height: 510px;		
+		}	
 
 </style>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 
+//	var filter = ["noneClass", "aden", "brooklyn", "lofi", "maven", "lark", "perpetua"];
+//	console.log(filter);
+	
+		
 	/* 댓글 불러오기 */
 	var searchRequest = new XMLHttpRequest();
 	var r_pno = 0
@@ -69,8 +84,8 @@ body { padding-top: 70px;
 	
 	/* 무한스크롤 */
 	$(window).scroll(function(){
-		if($(window).scrollTop() >= $(document).height() - $(window).height()){
-			var startNo = $(".table").last().data("no") || 0;
+		if($(window).scrollTop() >= $(document).height() - $(window).height()){		//  스크롤이 다 내려가면
+			var startNo = $(".table").last().data("no") || 0;						// 
 			if(startNo == 1){
 				alert('마지막 포스트 입니다.');
 			}else{
@@ -95,7 +110,9 @@ body { padding-top: 70px;
 									+		"</tr>"
 									+		"<tr>"
 									+			"<td align='center' colspan='3'>"
+									+				"<figure id='figure' class='noneClass'>"
 									+				"<img src='/photo/" + data[i].p_photo + "'/>"
+									+				"</figure>"
 									+			"</td>" 
 									+		"</tr>"	
 									+ 		"<tr>"
@@ -137,7 +154,8 @@ body { padding-top: 70px;
 			}	//	else
 		}
 	});
-
+		
+		
 </script>
 
 
@@ -201,7 +219,9 @@ body { padding-top: 70px;
 				
 		<tr>
 			<td align="center" colspan="3">
+				<figure id="figure" class="noneClass">
 				<img class="rounded" alt="Cinque Terre" src="/photo/${vo.p_photo}" />
+				</figure>
 			</td> 
 		</tr>
 		
@@ -240,7 +260,7 @@ body { padding-top: 70px;
 </c:forEach>
 
 <c:if test="${postList == null}">
-	환영합니다 ㅅㅂ람아
+
 </c:if>
 	<div class="add"></div>
 

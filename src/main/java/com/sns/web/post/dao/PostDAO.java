@@ -6,6 +6,13 @@ import com.sns.web.member.model.MemberVO;
 import com.sns.web.post.model.PostVO;
 import com.sns.web.post.model.ReplyVO;
 
+/**
+ * postmapper.xml로 해당 아이디를 넘겨주는 클래스 
+ * @author 
+ *
+ */
+
+//
 public interface PostDAO {
 
 	void insert(PostVO vo) throws Exception;
@@ -15,4 +22,6 @@ public interface PostDAO {
 	List<ReplyVO> selectReply(int r_pno) throws Exception;
 	int getMaxPostNo() throws Exception;
 	int selectCount() throws Exception;
+
+	
 }

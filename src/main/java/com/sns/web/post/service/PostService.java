@@ -15,4 +15,6 @@ public interface PostService {
 	List<ReplyVO> selectReply(int r_pno) throws Exception;
 	int getMaxPostNo() throws Exception;
 	int selectCount() throws Exception;
+	
+	
 }

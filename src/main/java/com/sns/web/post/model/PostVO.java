@@ -4,16 +4,22 @@ import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * 게시물 정보가 담긴 vo
+ * @author Lim jongmin
+ * @author Oh jieun
+ *
+ */
 @Component
 public class PostVO {
 
-	int p_no; 				// 게시물 전체 번호(시퀀스 설정해둠)
-	String p_id;			// 글 게시자
-	String p_photo; 		// 이미지파일 이름 (아이디 + 글 등록일 + .jpg) 일괄 적용
-	String p_content; 		// 글 내용
-	Date p_regdate;			// 글 등록일
-	int p_replycnt;			// 댓글 개수 (오라클 기본값 0 설정)
-	int p_filter;			// 필터 번호 (오라클 기본값 0 설정)
+	int p_no; 				/** 게시물 전체 번호 (시퀀스 설정) */
+	String p_id;			/** 글 게시자 */
+	String p_photo; 		/** 이미지파일 이름 (아이디 + 글 등록일 + .jpg) 일괄 적용 */
+	String p_content; 		/** 글 내용 */
+	Date p_regdate;			/** 글 등록일 */
+	int p_replycnt;			/** 댓글 개수 (기본값 0) */
+	int p_filter;			/** 필터 번호 (기본값 0) */
 	
 	
 	public int getP_no() {

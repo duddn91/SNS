@@ -6,6 +6,7 @@
 
 <mapper namespace="com.sns.web.member.memberMapper">
 
+	<!-- 회원 등록 -->
 	<insert id="insertMember" parameterType="com.sns.web.member.model.MemberVO">
 
 		INSERT INTO MEMBER (m_no, m_id, m_pw, m_email, m_birth, m_gender, m_phone, m_name)
@@ -22,6 +23,7 @@
 
 	</insert>
 	
+	<!-- 회원 아이디 가져오기 -->
 	<select id="getMemberInfo" resultType="com.sns.web.member.model.MemberVO"> 
 		SELECT 
 			*
@@ -31,6 +33,7 @@
 			m_id = #{m_id} 
 	</select> 
 	
+	<!-- 회원 목록 -->
 	<select id="getMemeberList" resultType="com.sns.web.member.model.MemberVO"> 
 		SELECT 
 			*
@@ -38,6 +41,7 @@
 			MEMBER
 	</select> 
 	
+	<!-- 아이디별로 회원 정보 등록 -->
 	<update id="updateMember" parameterType="com.sns.web.member.model.MemberVO"> 
 		UPDATE 
 			MEMBER
@@ -47,12 +51,14 @@
 			m_id = #{m_id} 
 	</update> 
 	
+	<!-- 회원 아이디 삭제 -->
 	<delete id="deleteMember" parameterType="int"> 
 		DELETE 
 			MEMBER
 		 WHERE m_id = #{m_id} 
 	</delete>
 
+	<!-- 회원 수? -->
 	<select id="checkId" parameterType="String" resultType="int">
 		SELECT
 			COUNT(*)

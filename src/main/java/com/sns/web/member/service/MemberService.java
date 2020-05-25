@@ -14,4 +14,6 @@ public interface MemberService {
 	public int updateMember(MemberVO memberVO) throws Exception;
 	public int deleteMember(int m_no) throws Exception;
 	public MemberVO loginCheck(MemberVO memberVO) throws Exception;
+	public int getPostNo();
+	public List<MemberVO> selectList(int startNo);
 }

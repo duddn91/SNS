@@ -61,6 +61,18 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.loginCheck(memberVO);
 	}
 
+	@Override
+	public int getPostNo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<MemberVO> selectList(int startNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }
