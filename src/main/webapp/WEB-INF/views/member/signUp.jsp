@@ -6,16 +6,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Stargram</title>
 
-<style type="text/css">
-td {
-	border: 1px solid #000000;
-	border-collapse: collapse;
-}
-</style>
+	<link rel="stylesheet" href="/css/reset.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style2.css">
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="shortcut icon" href="/imgs/instagram.png">
 
+</head>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -25,9 +27,9 @@ td {
 	//아이디 정규식
 	var idJ = /^[a-z0-9][a-z0-9]{3,11}$/;
 	// 비밀번호 정규식
-	var pwJ = /^[A-Za-z0-9]{4,12}$/;
+	var pwJ = /^[A-Za-z0-9]{4,15}$/;
 	// 이름 정규식
-	var nameJ = /^[가-힣]{2,4}|[a-zA-Z]{2,10}\s[a-zA-Z]{2,10}$/;
+	var nameJ = /^[가-힣]{2,4}$/;
 	// 이메일 검사 정규식
 	var mailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	// 휴대폰 번호 정규식
@@ -39,7 +41,9 @@ $(document).ready(function() {
 	
 	//아이디 중복확인
 	$("#m_id").keyup(function() {
-		if($('#m_id').val()==''){
+		if($('#m_id').val().length > 0){
+			
+		} else if($('#m_id').val()==''){
 			$('#id_check').text('아이디를 입력하세요.');
 			$('#id_check').css('color', 'red');
 		} else if(idJ.test($('#m_id').val())!=true){
@@ -52,7 +56,7 @@ $(document).ready(function() {
 			
 			$.ajax({
 				type : 'GET',
-				data : paramData,//mem_id라는 이름으로 mem_id라는 데이터를 @WebServlet("/idsearch.do")에 보내겠다
+				data : paramData,
 				url : 'checkId',
 				success : function(data) {
 					if(data > 0){
@@ -63,12 +67,10 @@ $(document).ready(function() {
 						if(idJ.test(m_id)){
 							$('#id_check').text('사용가능한 아이디 입니다.');
 							$('#id_check').css('color', 'blue');
-							$("#usercheck").attr("disabled", false);
 						}
 						else if(m_id==''){
 							$('#id_check').text('아이디를 입력해주세요.');
 							$('#id_check').css('color', 'red');
-							$("#usercheck").attr("disabled", true);
 						}
 						else if(idJ.test($('#m_id').val())){
 							console.log('false');
@@ -78,8 +80,7 @@ $(document).ready(function() {
 						else{
 							$('#id_check').text("아이디는 소문자와 숫자 4~12자리만 가능합니다.");
 							$('#id_check').css('color', 'red');
-							$("#usercheck").attr("disabled", true);
-						}
+						} 
 					}
 				}
 			});//ajax///
@@ -133,7 +134,7 @@ $(document).ready(function() {
 	}); //End of method /*
 	
 	
-	$('.signUp').click(function(){
+	$('.submit_btn').click(function(){
 		
 		var inval_Arr = new Array(6).fill(false);
 		
@@ -219,7 +220,7 @@ $(document).ready(function() {
 				$('#pw_check').text('');
 			} else {
 				console.log('false');
-				$('#pw_check').text('4~12자의 숫자 , 문자로만 사용 가능합니다.');
+				$('#pw_check').text('4~15자의 숫자 , 문자로만 사용 가능합니다.');
 				$('#pw_check').css('color', 'red');
 			}
 		});
@@ -270,12 +271,126 @@ $(document).ready(function() {
 	
 });
 
-</script>
 
-</head>
+
+</script>
 <body>
 
+<section id="container">
 
 
+    <!-- <header id="header">
+        <section class="h_inner">
+
+            <h1 class="logo">
+                <a href="index.jsp">
+                    <div class="sprite_insta_icon"></div>
+                    <div>
+                        <div class="sprite_write_logo"></div>
+                    </div>
+                </a>
+            </h1>
+
+            <div class="search_field">
+                <input type="text" placeholder="검색" tabindex="0">
+
+                <div class="fake_field">
+                    <span class=sprite_small_search_icon></span>
+                    <span>검색</span>
+                </div>
+            </div>
+
+
+            <div class="right_icons">
+                <a href="new_post.jsp"><div class="sprite_camera_icon"></div></a>
+                <a href="login.jsp"><div class="sprite_compass_icon"></div></a>
+                <a href="follow.jsp"><div class="sprite_heart_icon_outline"></div></a>
+                <a href="profile.jsp"><div class="sprite_user_icon_outline"></div></a>
+            </div>
+        </section>
+    </header> -->
+
+
+	
+	<div id="main_container">
+	
+        <div class="form_container">
+
+            <div class="form">
+
+                <h1 class="sprite_insta_big_logo title"></h1>
+                
+				<form action="signOK" method="post" role="form" id="joinForm" name="member">
+				
+				<h2 class="fs-hh">친구들의 사진과 동영상을 보려면 가입하세요.</h2>
+					
+					<div class="form-group">
+						<input aria-label="아이디를 입력해주세요." aria-required="true" 
+						 id="m_id" name="m_id" type="text" class="form-control" placeholder="아이디(영문,숫자 4-12자리)">
+						<div class="eheck_font" id="id_check"></div>
+					</div>
+	
+					<div class="form-group">
+						<input type="password"
+							class="form-control" id="m_pw" name="m_pw" placeholder="비밀번호(영문,숫자 4-15자리)">
+						<div class="eheck_font" id="pw_check"></div>
+					</div>
+	
+					<div class="form-group">
+						<input type="password"
+							class="form-control" id="m_pw2" name="m_pw2"
+							placeholder="비밀번호 확인">
+						<div class="eheck_font" id="pw2_check"></div>
+					</div>
+	
+					<div class="form-group">
+						<input type="text"
+							class="form-control" id="m_name" name="m_name" placeholder="이름">
+						<div class="eheck_font" id="name_check"></div>
+					</div>
+	
+					<div class="form-group">
+						<input type="tel"
+							class="form-control" id="m_birth" name="m_birth"
+							placeholder="생년월일(ex.19940712)">
+						<div class="eheck_font" id="birth_check"></div>
+					</div>
+	
+					<div class="form-group">
+						<input type="email"
+							class="form-control" id="m_email" name="m_email"
+							placeholder="이메일">
+						<div class="eheck_font" id="email_check"></div>
+					</div>
+	
+					<div class="form-group">
+						<input
+							type="tel" class="form-control" id="m_phone" name="m_phone"
+							placeholder="핸드폰('-'없이 번호만 입력해주세요.)">
+						<div class="eheck_font" id="phone_check"></div>
+					</div>
+					
+					<div class="form-group">
+						<input type="submit" id="submit_btn" value="회원가입" class="submit_btn">
+					</div>
+					
+					<p class=" ZGwn1">가입하면 Stargram의 
+						<a target="_blank" href="https://help.instagram.com/581066165581870">약관</a>, 
+						<a target="_blank" href="https://help.instagram.com/519522125107875">데이터 정책</a> 및 
+						<a target="_blank" href="/legal/cookies/">쿠키 정책</a>
+						에 동의하게 됩니다.
+					</p>
+				</form>
+				</div> <!-- form div  -->
+				
+				<div class="gr27e">
+	                <div>
+	                    <p class="izU2O ">계정이 있으신가요?<a href="/login"> 로그인</a></p>
+	                </div>
+        	   	</div>
+        	   	
+			</div>
+		</div>
+</section>
 </body>
 </html>

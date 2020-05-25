@@ -1,6 +1,7 @@
 package com.sns.web.member.dao;
 
 import java.util.HashMap;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -13,6 +14,11 @@ import org.springframework.stereotype.Repository;
 import com.sns.web.member.model.MemberVO;
 import com.sns.web.member.service.MemberService;
 
+/**
+ *	MemberDAO를 상속받아 memberMapper.xml에 접근해서
+ *	sql문을 실행시켜서 db에서 값을 받아와 리턴 시켜준다.
+ *	@author youngwoo Byun
+ */
 @Repository
 public class MemberDAOImpl implements MemberDAO{
 

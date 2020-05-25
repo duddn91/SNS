@@ -14,7 +14,13 @@ import com.sns.web.member.model.MemberVO;
 import com.sns.web.member.service.MemberService;
 import com.sns.web.post.model.PostVO;
 import com.sns.web.post.model.ReplyVO;
-
+/**
+ *	PostDAO를 상속받아 postMapper.xml에 접근해서
+ *	sql문을 실행시켜서 db에서 값을 받아와 리턴 시켜준다.
+ *	@author youngwoo Byun	
+ *  @author Lim jongmin
+ *  @author Oh jieun
+ */
 @Repository
 public class PostDAOImpl implements PostDAO{
 

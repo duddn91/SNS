@@ -11,10 +11,17 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.sns.web.member.model.MemberVO;
 
+/**
+ *  controller로 보내기 전 로그인 검사를 하고 
+ *  로그인 되어있는 경우 회원정보를 session에 담아주고 
+ *  그렇지 않을 경우 로그인 페이지로 다시 보내준다. 
+ * 	@author youngwoo Byun
+ */
 public class LoginInterceptor extends HandlerInterceptorAdapter{
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
@@ -35,6 +42,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
         return true;
     }
   
+
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
             ModelAndView modelAndView) throws Exception {

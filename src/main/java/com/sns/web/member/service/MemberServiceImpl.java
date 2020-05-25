@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 
 import com.sns.web.member.dao.MemberDAO;
 import com.sns.web.member.model.MemberVO;
-
+/**
+ * 	MemberService를 상속받아 비즈니스 로직을 작성하는 클래스
+ *  MemberDAO로 매개변수를 전달해주고 받아온 값을 controller로 리턴해준다.
+ *	@author youngwoo Byun
+ */
 @Service
 public class MemberServiceImpl implements MemberService{
 

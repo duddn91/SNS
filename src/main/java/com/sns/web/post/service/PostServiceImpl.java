@@ -13,6 +13,13 @@ import com.sns.web.post.dao.PostDAO;
 import com.sns.web.post.model.PostVO;
 import com.sns.web.post.model.ReplyVO;
 
+/**
+ * 	PostService를 상속받아 비즈니스 로직을 작성하는 클래스
+ *  PostDAO로 매개변수를 전달해주고 받아온 값을 controller로 리턴해준다.
+ *	@author youngwoo Byun
+ *  @author Lim jongmin
+ *  @author Oh jieun
+ */
 @Service
 public class PostServiceImpl implements PostService{
 
@@ -29,7 +36,6 @@ public class PostServiceImpl implements PostService{
 		
 		postDAO.insert(vo);
 	
-		
 		
 	}
 

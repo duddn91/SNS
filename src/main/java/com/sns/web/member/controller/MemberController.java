@@ -17,7 +17,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sns.web.member.model.MemberVO;
 import com.sns.web.member.service.MemberService;
-	
+
+/**
+ * @author youngwoo Byun
+ */
+
 @Controller
 @RequestMapping("/member")
 public class MemberController {
@@ -27,7 +31,9 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	// 회원가입 폼
+	/**
+	 *  회원가입 창으로 보내준다.
+	 */
 	@RequestMapping("/signUp")
 	public String signUpjsp(Model model) throws Exception {
 		
@@ -35,10 +41,29 @@ public class MemberController {
 		
 		model.addAttribute("memberVO", new MemberVO());
 	    
-		return "member/signUp2";
+		return "member/signUp";
 	}
 	
-	// 회원정보 db에 insert
+	/**
+	 *  Ajax로 넘어온 정보를 db로 보내서 id 정보를 가져와
+	 *  결과를 보내 중복확인 시켜준다.
+	 */
+	@RequestMapping("/checkId")
+	@ResponseBody
+	public int checkId(@RequestBody @RequestParam(value = "m_id") String m_id) throws Exception {
+		
+		logger.debug("memberController에 checkId() 실행"); 
+		
+		int result = 0;
+		result= memberService.checkId(m_id);
+		
+		return result;
+	}
+	
+	/**
+	 *  회원가입 정규식에 맞게 정보가 전달되면
+	 *  db에 정보를 저장하고 로그인 화면으로 보내준다.
+	 */
 	@RequestMapping("/signOK")
 	public String insertMember(HttpSession session,MemberVO memberVO) throws Exception {
 		
@@ -48,20 +73,13 @@ public class MemberController {
 		return "redirect:/login";
 	}
 	
-	// 아이디 중복검사
-	@RequestMapping("/checkId")
-	@ResponseBody
-	public int checkId(@RequestBody @RequestParam(value = "m_id") String m_id) throws Exception {
-		
-		logger.debug("memberController에 checkId() 실행"); 
-		
-		int result = 0;
-		result= memberService.checkId(m_id);
-
-		return result;
-	}
 	
-	// 로그인 처리하는 부분
+	/**
+	 *  로그인 화면에서 id와 pw 정보가 맞으면 로그인 시켜주고
+	 *  회원 정보를 session에 저장해서 LoginInterceptor에서
+	 *  session에 회원정보를 유지시켜주도록 하고 post페이지로 보내주고
+	 *  정보가 맞지 않으면 다시 로그인 화면으로 보내준다.
+	 */
     @RequestMapping(value="/login", method=RequestMethod.POST)
     public String loginCheck(HttpSession session,MemberVO memberVO) throws Exception{
         String returnURL = "";
@@ -83,8 +101,10 @@ public class MemberController {
           
         return returnURL;
     }
-    
-    // 마이 페이지
+   
+    /**
+	 * 마이페이지 아직 안함 
+	 */
  	@RequestMapping("/mypage")
  	public String myPage(HttpSession session) throws Exception {
  		

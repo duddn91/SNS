@@ -4,6 +4,12 @@ import java.util.Date;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * 댓글 정보가 담긴 vo
+ * @author Lim jongmin
+ * @author Oh jieun
+ *
+ */
 @Component
 public class ReplyVO {
 	

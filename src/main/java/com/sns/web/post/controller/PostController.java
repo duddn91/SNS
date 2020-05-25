@@ -30,7 +30,14 @@ import com.sns.web.member.model.MemberVO;
 import com.sns.web.post.model.PostVO;
 import com.sns.web.post.model.ReplyVO;
 import com.sns.web.post.service.PostService;
-
+/**
+ * @author Lim jongmin
+ * @author  Byun YoungWoo
+ * @author Oh Jieun
+ * @version 1.0 
+ * @since 2020. 05. 11
+ * 
+ */
 @Controller
 @RequestMapping("/post")
 public class PostController {
@@ -44,7 +51,12 @@ public class PostController {
 	@Autowired
 	private PostService postService;
 
-	// 게시판 화면
+	/**
+	 *    게시판 화면을 불러오는 메소드
+	 * @param request 서버에서 오는 요청
+	 * @param model 내부 비즈니스 로직 처리 역할 
+	 * @return postview.jsp 페이지 호출
+	 */
 	@RequestMapping("/postview")
 	public String postview(HttpServletRequest request, Model model) throws Exception {
 		
@@ -70,7 +82,10 @@ public class PostController {
 
 	}
 
-//	포스팅 페이지(posting.jsp)를 불러오는 메소드	// get/post 설정
+	/**   
+	 * 포스팅 페이지(posting.jsp)를 불러오는 메소드   
+	 * @return posting.jsp 페이지 호출함
+	 */
 	@RequestMapping("/posting")
 	public String posting(HttpServletRequest request, Model model) throws Exception{
 		logger.debug("PostController에 posting()실행 ");
@@ -79,7 +94,11 @@ public class PostController {
 		return "post/posting";
 	}
 
-//	게시글 업로드 메소드	
+	/**
+	 *    view 에서 submit하면 게시글을 업로드하는 메소드   
+	 * @param file MultipartFile의 객체
+	 * @return 글 업로드 이후 다시 메인 리스트 페이지로 돌아간다.
+	 */
 	@RequestMapping(value="/postingOK", method = RequestMethod.POST)
 	public String postingOK(MultipartFile file, Model model, PostVO vo,
 			HttpServletRequest request) throws Exception {
@@ -104,6 +123,12 @@ public class PostController {
 		return "redirect:/post/postview";	// list 페이지
 	}
 	
+	/**
+	 * 
+	 * @param request   댓글을 쓴 사람의 아이디, 댓글내용, 댓글을 단 게시물번호의 값을 가져온다.
+	 * @param replyVO 저장할 댓글 객체를 저장하는 변수
+	 * @return 데이터베이스에 저장후 view페이지를 다시 호출한다.
+	 */
 	@RequestMapping("/replyInsert")
 	public String replyInsert(HttpServletRequest request, Model model, ReplyVO replyVO) 
 			throws Exception{
@@ -123,6 +148,13 @@ public class PostController {
 		return "redirect:/post/postview";
 	}
 	
+	/**
+	* 
+	* @param request   게시물번호를 받아온다.
+	* @param response       게시물번호에 달린 댓글 목록을 보내준다.
+	* @throws Exception
+	*/
+
 	@RequestMapping(value="/getReply", method=RequestMethod.POST)
 	@ResponseBody
 	public void getReply(HttpServletRequest request, HttpServletResponse response) throws Exception{
@@ -149,15 +181,23 @@ public class PostController {
 		}
 	}
 	
-	@RequestMapping(value="/getpost", method=RequestMethod.GET, produces = "application/json;")
-	public @ResponseBody List<PostVO> getpost(HttpServletRequest request, Model model) throws Exception{
-		
-		logger.debug("PostController에 getpost()실행 ");
-		
-		int startNo = Integer.parseInt(request.getParameter("no"));
-		List<PostVO> postList = postService.selectList(startNo);
-		return postList;
-	}
+	
+	 	/**
+	    * 
+	    * @param request   현재 게시물의 마지막번호를 받아온다.
+	    * @return         현재 마지막게시물에서 최신순으로 5개 게시물을 데이터베이스에서 받아 postview단으로 넘겨준다.
+	    * @throws Exception
+	    */
+	   @RequestMapping(value="/getpost", method=RequestMethod.GET, produces = "application/json;")
+	   public @ResponseBody List<PostVO> getpost(HttpServletRequest request, Model model) throws Exception{
+	      
+	      logger.debug("PostController에 getpost()실행 ");
+	      
+	      int startNo = Integer.parseInt(request.getParameter("no"));
+	      List<PostVO> postList = postService.selectList(startNo);
+	      return postList;
+	   }
+
 	
 
 }
