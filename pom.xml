@@ -2,7 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>	<groupId>com.sns.web</groupId>
+	<modelVersion>4.0.0</modelVersion>	
+	<groupId>com.sns.web</groupId>
 	<artifactId>web</artifactId>
 	<name>sns</name>
 	<packaging>war</packaging>
@@ -13,6 +14,7 @@
 		<org.aspectj-version>1.9.2</org.aspectj-version>
 		<org.slf4j-version>1.7.25</org.slf4j-version>
 	</properties>
+	
 	
 	<!-- 오라클 외부 저장소를 설정한다. -->
 	<repositories>
@@ -123,6 +125,18 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-web</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-webmvc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+
+		
 
 		<!-- AspectJ -->
 		<dependency>

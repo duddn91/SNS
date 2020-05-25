@@ -4,63 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="shortcut icon" href="imgs/instagram.png">
+
+<title>Stagram</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="shortcut icon" href="imgs/instagram.png">
+	
+
 </head>
 
-<style>
-
-.rr {
-	box-sizing: border-box;
- 	align-items: stretch;
- 	-webkit-box-align: stretch;
- 	-webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
- 	flex-direction: column;
- 	flex-shrink: 0;
-    margin: 0;
-    padding: 0;
-    font: inherit;
-    vertical-align: baseline;	
-}
-
-.s311c {
-    flex-grow: 1;
-    background-color: rgba(var(--b38,219,219,219),1);
-    height: 1px;
-    position: relative;
-    top: .45em;
-}
-
-.or {
-    color: rgba(var(--f52,142,142,142),1);
-    -webkit-box-flex: 0;
-    flex-grow: 0;
-    flex-shrink: 0;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 15px;
-    margin: 0 18px;
-    text-transform: uppercase;
-}
-
-.Z7p_S {
-    margin: 15px 40px 18px 10px;
-   	width: 245px;
-}
-
-.K-1uj {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    display: flex;
-}
-</style> 
 <body>
 
 
