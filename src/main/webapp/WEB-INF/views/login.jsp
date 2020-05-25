@@ -99,6 +99,7 @@ $(document).ready(function() {
                 <h1 class="sprite_insta_big_logo title"></h1>
 
                 <form action="member/login" method="post">
+                <form action="member/login">
                		<div class="form-group">
 	                   <p class="login_user_name">
 	                   	<input type="text" id="m_id" name="m_id" placeholder="ID" >

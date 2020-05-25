@@ -6,7 +6,7 @@
 
 <mapper namespace="com.sns.web.member.memberMapper">
 
-	<insert id="insertMember" parameterType="com.sns.web.model.MemberVO">
+	<insert id="insertMember" parameterType="com.sns.web.member.model.MemberVO">
 
 		INSERT INTO MEMBER (m_no, m_id, m_pw, m_email, m_birth, m_gender, m_phone, m_name)
 		VALUES (
@@ -22,7 +22,7 @@
 
 	</insert>
 	
-	<select id="getMemberInfo" resultType="com.sns.web.model.MemberVO"> 
+	<select id="getMemberInfo" resultType="com.sns.web.member.model.MemberVO"> 
 		SELECT 
 			*
 		FROM 
@@ -31,16 +31,16 @@
 			m_id = #{m_id} 
 	</select> 
 	
-	<select id="getMemeberList" resultType="com.sns.web.model.MemberVO"> 
+	<select id="getMemeberList" resultType="com.sns.web.member.model.MemberVO"> 
 		SELECT 
 			*
 		FROM 
-			TBL_USER
+			MEMBER
 	</select> 
 	
-	<update id="updateMember" parameterType="com.sns.web.model.MemberVO"> 
+	<update id="updateMember" parameterType="com.sns.web.member.model.MemberVO"> 
 		UPDATE 
-			TBL_USER 
+			MEMBER
 		SET 
 			m_name = #{m_name} , m_pw = #{m_pw} , m_email = #{m_email} , m_phone = #{m_phone} 
 		WHERE 
@@ -60,8 +60,16 @@
 			MEMBER
 		WHERE
 			m_id = #{m_id} 
-			
 	</select>
 
+	<!-- 인터셉터 후 세션에 등록 -->
+    <select id="loginCheck" resultType="com.sns.web.member.model.MemberVO">
+    	SELECT
+    		*
+    	FROM
+    		MEMBER
+    	WHERE
+			m_id = #{m_id} AND m_pw = #{m_pw}
+    </select>
 
 </mapper>
