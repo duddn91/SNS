@@ -13,8 +13,8 @@
 	<link rel="stylesheet" href="/css/reset.css">
 	<link rel="stylesheet" href="/css/common.css">
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style2.css">
 	<link rel="stylesheet" href="/css/login.css">
-	<link rel="stylesheet" href="/css/signup.css">
 	<link rel="shortcut icon" href="/imgs/instagram.png">
 
 </head>
@@ -373,7 +373,7 @@ $(document).ready(function() {
 						<input type="submit" id="submit_btn" value="회원가입" class="submit_btn">
 					</div>
 					
-					<p class=" ZGwn1">가입하면 Stagram의 
+					<p class=" ZGwn1">가입하면 Stargram의 
 						<a target="_blank" href="https://help.instagram.com/581066165581870">약관</a>, 
 						<a target="_blank" href="https://help.instagram.com/519522125107875">데이터 정책</a> 및 
 						<a target="_blank" href="/legal/cookies/">쿠키 정책</a>

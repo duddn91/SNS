@@ -1,8 +1,10 @@
 a, a:visited {
-    color: #00376b;
-    color: rgba(var(--fe0,0,55,107),1);
+    color: #0095f6;
+    color: rgba(var(--d69,0,149,246),1);
     text-decoration: none;
 }
+
+/* 또는 */
 .rr {
 	box-sizing: border-box;
  	align-items: stretch;
@@ -17,6 +19,7 @@ a, a:visited {
     vertical-align: baseline;	
 }
 
+/* - 또는 - */
 .s311c {
     flex-grow: 1;
     background-color: rgba(var(--b38,219,219,219),1);
@@ -25,6 +28,7 @@ a, a:visited {
     top: .45em;
 }
 
+/* 또는 */
 .or {
     color: rgba(var(--f52,142,142,142),1);
     -webkit-box-flex: 0;
@@ -37,15 +41,75 @@ a, a:visited {
     text-transform: uppercase;
 }
 
+/* 또는 */
 .Z7p_S {
-    margin: 15px 40px 18px 10px;
-   	width: 245px;
+    margin: 10px 42px 18px;
 }
 
+/* 또는 */
 .K-1uj {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     flex-direction: row;
     display: flex;
+}
+
+/* 회원가입창 소제목 */
+.fs-hh {
+    color: #8e8e8e;
+    color: rgba(var(--f52,142,142,142),1);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0 40px 10px;
+    text-align: center;
+	
+}
+
+/* 회원가입창 bottom box */
+.gr27e {
+    background-color: #fff;
+    background-color: rgba(var(--d87,255,255,255),1);
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+}
+
+/* 회원가입창 bottom box */
+.izU2O {
+    color: #262626;
+    color: rgba(var(--i1d,38,38,38),1);
+    font-size: 14px;
+    margin: 15px;
+    text-align: center;
+}
+
+/* 회원가입 입력창 */
+#id_check, #pw_check, #pw2_check, #name_check, #birth_check, #email_check, #phone_check {
+    margin: 3px 0px 3px 2px;
+    font-size: 14px;
+}
+
+.form-group {
+	margin: 0px 40px 6px;
+}
+
+
+/* 약관 동의 정책 */
+.ZGwn1>a, .ZGwn1>a:visited {
+    color: #8e8e8e;
+    color: rgba(var(--f52,142,142,142),1);
+    font-weight: 600;
+}
+
+.ZGwn1 {
+    color: #8e8e8e;
+    color: rgba(var(--f52,142,142,142),1);
+    font-size: 12px;
+    line-height: 16px;
+    margin: 10px 40px;
+    text-align: center;
 }
