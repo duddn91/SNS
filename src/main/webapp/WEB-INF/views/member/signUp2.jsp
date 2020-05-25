@@ -27,7 +27,7 @@
 	//아이디 정규식
 	var idJ = /^[a-z0-9][a-z0-9]{3,11}$/;
 	// 비밀번호 정규식
-	var pwJ = /^[A-Za-z0-9]{4,12}$/;
+	var pwJ = /^[A-Za-z0-9]{4,15}$/;
 	// 이름 정규식
 	var nameJ = /^[가-힣]{2,4}$/;
 	// 이메일 검사 정규식
@@ -221,7 +221,7 @@ $(document).ready(function() {
 				$('#pw_check').text('');
 			} else {
 				console.log('false');
-				$('#pw_check').text('4~12자의 숫자 , 문자로만 사용 가능합니다.');
+				$('#pw_check').text('4~15자의 숫자 , 문자로만 사용 가능합니다.');
 				$('#pw_check').css('color', 'red');
 			}
 		});
@@ -365,7 +365,7 @@ $(document).ready(function() {
 					<div class="form-group">
 						<input
 							type="tel" class="form-control" id="m_phone" name="m_phone"
-							placeholder="'-'없이 번호만 입력해주세요">
+							placeholder="휴대폰('-'없이 번호만 입력해주세요)">
 						<div class="eheck_font" id="phone_check"></div>
 					</div>
 					
