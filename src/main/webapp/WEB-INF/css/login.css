@@ -1,18 +1,19 @@
 
+form {
+	margin-top: 20px;
+}
 
-.form_container{
+.form_container {
     width: 350px;
     margin: 0 auto
-
 }
 
-.form_container .form{
+.form_container .form {
     background-color: #fff;
     border: 1px solid #e6e6e6;
-    padding: 0 40px 25px 40px;
+    padding: 10px 0;
     margin-bottom: 30px;
 }
-
 
 .form .title {
     overflow: hidden;
@@ -21,17 +22,17 @@
 }
 
 
-.form label{
+.form label {
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
 }
 
-.form input{
+.form input {
     width: 100%;
     background: 0 0;
-    border: 1px solid #efefef;
+    border: 1px solid #D8D8D8;
     border-radius: 3px;
     box-sizing: border-box;
     color: #262626;
@@ -39,11 +40,11 @@
     padding: 7px 8px 7px;
 }
 
-.form p{
+.form p {
     margin-bottom: 10px;
 }
 
-.form .submit_btn{
+.form .submit_btn {
     background: #3897f0;
     border-color: #3897f0;
     color: #fff;
@@ -59,8 +60,27 @@
     margin-top: 10px;
     cursor: pointer;
 }
+.form .submit_btn:disabled {
+    background-color: rgba(0,149,246,.3);
+    background-color: rgba(var(--d69,0,149,246),.3);
+    opacity: 1;
+    border: 1px solid transparent;
+}
 
-.bottom_box{
+/* 비밀번호 찾기 */
+._2Lks6, ._2Lks6:hover, ._2Lks6:active, ._2Lks6:visited {
+    color: #00376b;
+    color: rgba(var(--fe0,0,55,107),1);
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 12px;
+    text-align: center;
+	display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.bottom_box {
     text-align: center;
     /*height: 290px;*/
     background-color: #fff;
@@ -69,20 +89,3 @@
     /*display: flex;*/
     /*align-items: center;*/
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

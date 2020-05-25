@@ -35,7 +35,7 @@ public class MemberController {
 		
 		model.addAttribute("memberVO", new MemberVO());
 	    
-		return "member/signUp";
+		return "member/signUp2";
 	}
 	
 	// 회원정보 db에 insert

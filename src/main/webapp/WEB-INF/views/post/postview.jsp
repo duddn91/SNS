@@ -76,7 +76,7 @@ body { padding-top: 70px;
 			}else{
 				$.ajax({
 					type : 'get',
-					url : '/SNS_pj/getpost?no='+startNo,
+					url : './getpost?no='+startNo,
 					dataType : 'json',
 					success : function(data){
 						var str = "";
@@ -146,7 +146,6 @@ body { padding-top: 70px;
 <body>
 
 
-<!-- 무한스크롤 안되는데?ㅋㅋ -->
 <nav class="navbar navbar-fixed-top bg-info">
 	<div class="container-fluid">
 	    <p class="navbar-text">☆★stargram☆★</p>   
@@ -188,7 +187,6 @@ body { padding-top: 70px;
 
 
 
-<!-- 에휴 깃허브 언제하냐~ -->
 <c:forEach var="vo" items="${postList}">
 <c:if test="${postList != null}">
 	<table id="post${vo.p_no}" class="table borderless scrolling" align="center" cellpadding="5px" data-no="${vo.p_no}">
@@ -240,9 +238,6 @@ body { padding-top: 70px;
 </c:if>
 </c:forEach>
 
-<c:if test="${postList == null}">
-	환영합니다 ㅅㅂ람아
-</c:if>
 	<div class="add"></div>
 
 
