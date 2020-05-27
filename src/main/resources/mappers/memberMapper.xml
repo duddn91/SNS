@@ -58,7 +58,7 @@
 		 WHERE m_id = #{m_id} 
 	</delete>
 
-	<!-- 회원 수? -->
+	<!-- 아이디 중복 검사 -->
 	<select id="checkId" parameterType="String" resultType="int">
 		SELECT
 			COUNT(*)
@@ -66,6 +66,16 @@
 			MEMBER
 		WHERE
 			m_id = #{m_id} 
+	</select>
+
+	<!-- 이메일 중복 검사 -->
+	<select id="checkEmail" parameterType="String" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			MEMBER
+		WHERE
+			m_email = #{m_email} 
 	</select>
 
 	<!-- 인터셉터 후 세션에 등록 -->
@@ -77,5 +87,17 @@
     	WHERE
 			m_id = #{m_id} AND m_pw = #{m_pw}
     </select>
+   
+   <!-- 임시 비밀번호 변경 -->
+   	<update id="findPW" parameterType ="java.util.HashMap">
+   		UPDATE 
+			MEMBER
+		SET 
+			m_pw = #{m_pw} 
+		WHERE 
+			m_id = #{m_id} AND m_email = #{m_email}
+   	</update>
+    
+    
 
 </mapper>

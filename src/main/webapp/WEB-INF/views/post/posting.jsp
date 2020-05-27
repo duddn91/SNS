@@ -98,10 +98,7 @@
                     <input type="file" name="file" id="id_photo" required="required" >
                 </p>
                 <p>
-                    <textarea name="p_content" id="content" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다.
-#태그명 을 통해서 검색 태그를 등록할 수 있습니다.
-예시 : I # love # insta!"></textarea>
-
+                    <textarea name="p_content" id="content" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다." style="resize: none;"></textarea>
                 </p>
 			<input type="button" value="upload" onclick="formCheck()"/>
 			<input type="reset" value="rewrite" onclick="formDelete()"/>
