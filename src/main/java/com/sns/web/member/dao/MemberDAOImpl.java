@@ -66,6 +66,7 @@ public class MemberDAOImpl implements MemberDAO{
 		return sqlSession.selectOne(NAMESPACE+".loginCheck", memberVO);
 	}
 
+// 추가	
 	@Override
 	public int checkEmail(String m_email) throws Exception {
 		logger.debug("MemberDAOImpl에 checkEmail() 실행 ");

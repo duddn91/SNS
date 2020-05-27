@@ -121,6 +121,7 @@ public class MemberController {
  		return "member/mypage";
  	}
  	
+ 	// oje 추가
  	// 비밀번호 변경 페이지 요청
  	@RequestMapping("/findPW")
  	public String findPW(HttpSession session, Model model) {

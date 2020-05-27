@@ -88,6 +88,7 @@
 			m_id = #{m_id} AND m_pw = #{m_pw}
     </select>
    
+   <!-- oje 추가 -->
    <!-- 임시 비밀번호 변경 -->
    	<update id="findPW" parameterType ="java.util.HashMap">
    		UPDATE 

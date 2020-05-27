@@ -16,6 +16,7 @@ public interface MemberDAO {
 	public int deleteMember(int m_no) throws Exception;
 	public MemberVO loginCheck(MemberVO memberVO) throws Exception;
 	 	
+	// 추가
 	public int checkEmail(String m_email) throws Exception;
 	public void findPW(Map<String, Object> map);
 	

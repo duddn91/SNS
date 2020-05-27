@@ -6,13 +6,22 @@
    <!--  <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
 <title>Instagram Posting</title>
+<!-- oje -> oje -->
+<!-- 왜 안올라가아아아ㅏㅏㅏㅏㅏㅏ -->
+<link rel="stylesheet" href="/css/reset.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/new_post.css">
+<link rel="shortcut icon" href="/imgs/instagram.png">
+   <!--  <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+<title>Instagram Posting</title>
 
 <link rel="stylesheet" href="/css/reset.css">
 <link rel="stylesheet" href="/css/common.css">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/new_post.css">
 <link rel="shortcut icon" href="/imgs/instagram.png">
-
 
 </head>
 
@@ -64,6 +73,7 @@
 	
 	            <div class="right_icons">
 	                <a href="post/posting.jsp"><div class="sprite_camera_icon"></div></a> <!--  아예 안되게? -->
+	                <a href="posting.jsp"><div class="sprite_camera_icon"></div></a> <!--  아예 안되게? -->
 	                <a href="login.jsp"><div class="sprite_compass_icon"></div></a>
 	                <a href="follow.jsp"><div class="sprite_heart_icon_outline"></div></a>
 	                <a href="profile.jsp"><div class="sprite_user_icon_outline"></div></a>
@@ -99,6 +109,11 @@
                 </p>
                 <p>
                     <textarea name="p_content" id="content" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다." style="resize: none;"></textarea>
+=======
+                    <textarea name="p_content" id="content" cols="50" rows="5" placeholder="140자 까지 등록 가능합니다.
+#태그명 을 통해서 검색 태그를 등록할 수 있습니다.
+예시 : I # love # insta!"></textarea>
+
                 </p>
 			<input type="button" value="upload" onclick="formCheck()"/>
 			<input type="reset" value="rewrite" onclick="formDelete()"/>

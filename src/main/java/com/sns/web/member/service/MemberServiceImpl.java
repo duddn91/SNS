@@ -62,6 +62,7 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.loginCheck(memberVO);
 	}
 
+// 추가	
 	@Override
 	public int checkEmail(String m_email) throws Exception {
 		logger.debug("MemberServiceImpld에 checkEmail() 실행");

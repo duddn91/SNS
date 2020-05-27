@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-
+<!-- 임시 비밀번호 페이지-->
 <title>Instagram Find Password</title>
 
 <link rel="stylesheet" href="/css/reset.css">
