@@ -15,12 +15,13 @@
 	<annotation-driven/>	
 	<!-- 경로 매핑 -->
 	<resources mapping="/resources/**" location="/resources/" />
-	<resources mapping="/photo/**" location="file:///D:/kookgi_8gi_BYW/spring/ec-workspace/SNS_pj/src/main/webapp/resources/PostingImages/" />
 	<resources mapping="/css/**" location="/WEB-INF/css/" />
 	<resources mapping="/imgs/**" location="/WEB-INF/imgs/" />
+	<resources mapping="/profile/**" location="file:///C:/Users/Administrator/git/SNS_pj/src/main/webapp/resources/profile/"/>
+	<resources mapping="/photo/**" location="file:///C:/Users/Administrator/git/SNS_pj/src/main/webapp/resources/PostingImages/"/>
+	<resources mapping="/signImages/**" location="file:///C:/Users/Administrator/git/SNS_pj/src/main/webapp/resources/signImages/"/>
 	
 	
-		
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property value="/WEB-INF/views/" name="prefix"/>
 		<beans:property value=".jsp" name="suffix"/>
@@ -32,7 +33,7 @@
 		
 	<!-- 포스팅 이미지 저장 경로 -->
 	<beans:bean class="java.lang.String" id="uploadPath">
-		<beans:constructor-arg value="D:\kookgi_8gi_BYW\spring\ec-workspace\SNS_pj\src\main\webapp\resources\PostingImages"/>
+		<beans:constructor-arg value="C:\Users\Administrator\git\SNS_pj\src\main\webapp\resources\PostingImages"/>
 	</beans:bean>
 	
 	<!-- 다중 이미지 저장? -->	
