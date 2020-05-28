@@ -15,7 +15,14 @@ public class ReplyVO {
 	private int r_ref;		
 	private int r_lev;	
 	private int r_seq;
+	private int r_delete;
 	
+	public int getR_delete() {
+		return r_delete;
+	}
+	public void setR_delete(int r_delete) {
+		this.r_delete = r_delete;
+	}
 	public int getR_no() {
 		return r_no;
 	}
@@ -67,7 +74,8 @@ public class ReplyVO {
 	@Override
 	public String toString() {
 		return "ReplyVO [r_no=" + r_no + ", r_pno=" + r_pno + ", r_id=" + r_id + ", r_content=" + r_content
-				+ ", r_regDate=" + r_regDate + ", r_ref=" + r_ref + ", r_lev=" + r_lev + ", r_seq=" + r_seq + "]";
+				+ ", r_regDate=" + r_regDate + ", r_ref=" + r_ref + ", r_lev=" + r_lev + ", r_seq=" + r_seq
+				+ ", r_delete=" + r_delete + "]";
 	}
 	
 	

@@ -2,6 +2,7 @@ package com.sns.web.member.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -60,9 +61,22 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public MemberVO loginCheck(MemberVO memberVO) {
+	public MemberVO loginCheck(MemberVO memberVO) throws Exception{
 		logger.debug("MemberDAOImpl에 loginCheck() 실행 ");
 		return sqlSession.selectOne(NAMESPACE+".loginCheck", memberVO);
+	}
+	
+	@Override
+	public int checkEmail(String m_email) throws Exception {
+		logger.debug("MemberDAOImpl에 checkEmail() 실행 ");
+		return sqlSession.selectOne(NAMESPACE+".checkEmail", m_email);
+	}
+
+	@Override
+	public void findPW(Map<String, Object> map) throws Exception{
+		logger.debug("MemberDAOImpl에 findPW() 실행 ");
+		sqlSession.update(NAMESPACE+".findPW", map);
+		
 	}
 
 

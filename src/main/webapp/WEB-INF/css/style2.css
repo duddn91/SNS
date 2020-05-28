@@ -89,7 +89,7 @@ a, a:visited {
 
 /* 회원가입 입력창 */
 #id_check, #pw_check, #pw2_check, #name_check, #birth_check, #email_check, #phone_check {
-    margin: 3px 0px 3px 2px;
+    margin: 3px 0px 5px 2px;
     font-size: 14px;
 }
 

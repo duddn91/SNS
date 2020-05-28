@@ -13,9 +13,17 @@ public class PostVO {
 	String p_content; 		// 글 내용
 	Date p_regdate;			// 글 등록일
 	int p_replycnt;			// 댓글 개수 (오라클 기본값 0 설정)
-	int p_filter;			// 필터 번호 (오라클 기본값 0 설정)
+	int p_like;				//	좋아요 개수
 	
 	
+	public int getP_like() {
+		return p_like;
+	}
+
+	public void setP_like(int p_like) {
+		this.p_like = p_like;
+	}
+
 	public int getP_no() {
 		return p_no;
 	}
@@ -64,18 +72,10 @@ public class PostVO {
 		this.p_replycnt = p_replycnt;
 	}
 
-	public int getP_filter() {
-		return p_filter;
-	}
-	
-	public void setP_filter(int p_filter) {
-		this.p_filter = p_filter;
-	}
-
 	@Override
 	public String toString() {
 		return "PostVO [p_no=" + p_no + ", p_id=" + p_id + ", p_photo=" + p_photo + ", p_content=" + p_content
-				+ ", p_regdate=" + p_regdate + ", replucnt=" + p_replycnt + ", p_filter=" + p_filter + "]";
+				+ ", p_regdate=" + p_regdate + ", replucnt=" + p_replycnt + "]";
 	}
 		
 }

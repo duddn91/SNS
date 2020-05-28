@@ -120,7 +120,7 @@ body {
 }
 
 #header .right_icons {
-	width: 132px;
+	width: 60px;
 	display: flex;
 	justify-content: space-between;
 }

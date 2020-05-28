@@ -135,7 +135,7 @@ $(document).ready(function() {
 	}); //End of method /*
 	
 	
-	$('.signUp').click(function(){
+	$('#submit_btn').click(function(){
 		
 		var inval_Arr = new Array(6).fill(false);
 		
