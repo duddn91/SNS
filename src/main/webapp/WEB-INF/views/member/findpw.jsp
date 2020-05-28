@@ -20,38 +20,6 @@
 
 <section id="container">
 
-
-    <!-- <header id="header">
-        <section class="h_inner">
-
-            <h1 class="logo">
-                <a href="index.jsp">
-                    <div class="sprite_insta_icon"></div>
-                    <div>
-                        <div class="sprite_write_logo"></div>
-                    </div>
-                </a>
-            </h1>
-
-            <div class="search_field">
-                <input type="text" placeholder="검색" tabindex="0">
-
-                <div class="fake_field">
-                    <span class=sprite_small_search_icon></span>
-                    <span>검색</span>
-                </div>
-            </div>
-
-
-            <div class="right_icons">
-                <a href="new_post.jsp"><div class="sprite_camera_icon"></div></a>
-                <a href="login.jsp"><div class="sprite_compass_icon"></div></a>
-                <a href="follow.jsp"><div class="sprite_heart_icon_outline"></div></a>
-                <a href="profile.jsp"><div class="sprite_user_icon_outline"></div></a>
-            </div>
-        </section>
-    </header> -->
-
 <!-- 학원에서 할 거 -->
 <!-- https://foodchain.tistory.com/140 -->
 
@@ -70,13 +38,25 @@
                 	<div class="findpw_help">이메일을 입력하면 다시 계정에 로그인할 수 있는 링크를 보내드립니다.</div>
                 </div>
                	<div class="findpw_col">
-	                <form action="#" method="post">
-	               		<p class="login_user_password">
-	                	    <input type="text" id="m_pw" name="m_pw" placeholder="Password" >
-	                    </p>
+	                <form action="#" method="post" class="findpw_form">
+                	    <input type="text" id="findpw_input" name="findpw_input" placeholder="이메일을 입력하세요." >
 	                </form>
                 </div>
-            </div> <!-- form div -->
+                <div class="findpw_col">
+                	<button type="submit" id="findpw_btn" class="findpw_btn">로그인 링크 보내기</button>
+                </div>
+	          	<div class="rr">
+		            <div class="K-1uj Z7p_S">
+		            	<div class="s311c"></div>	
+		            	<div class="or">또는</div>
+		            	<div class="s311c"></div>
+		            </div>
+	       		</div>
+               <div class="findpw_col">
+               		<a href="#" class="to_signup">새 계정 만들기</a>
+               </div>
+               
+            </div> 
 
             <div class="gr27e">
                 <div class="findpw_bottom">
