@@ -20,6 +20,7 @@
 	<resources mapping="/imgs/**" location="/WEB-INF/imgs/" />
 	
 	
+		
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property value="/WEB-INF/views/" name="prefix"/>
 		<beans:property value=".jsp" name="suffix"/>
