@@ -2,9 +2,13 @@ package com.sns.web.member.model;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * 회원 정보 형식을 저장하는 클래스
+ * @author youngwoo Byun
+ */
 @Component
 public class MemberVO {
-
+	
 	private int m_no;
 	private String m_name;
 	private String m_id;
@@ -63,15 +67,13 @@ public class MemberVO {
 	public void setM_profile(String m_profile) {
 		this.m_profile = m_profile;
 	}
+	
 	@Override
 	public String toString() {
 		return "MemberVO [m_no=" + m_no + ", m_name=" + m_name + ", m_id=" + m_id + ", m_pw=" + m_pw + ", m_email="
 				+ m_email + ", m_birth=" + m_birth + ", m_phone=" + m_phone + ", m_profile=" + m_profile + "]";
 	}
 	
-	
-	
-	
-	
-	
 }
+	
+

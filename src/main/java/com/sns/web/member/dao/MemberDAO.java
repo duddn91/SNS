@@ -4,7 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.sns.web.member.model.MemberVO;
-
+/**
+ * 	MemberDAOImpl과 결합하는 인터페이스
+ * 	클래스간의 결합성을 낮춰주고 유지보수에 용이하게 해주는 인터페이스다.
+ *	@author youngwoo Byun
+ */
 public interface MemberDAO {
 
 	public List<MemberVO> getMemberList() throws Exception; 
