@@ -5,8 +5,8 @@
 
 	<!-- 업로드한 글 1건을 테이블에 저장한다. -->
 	<insert id="insert" parameterType="com.sns.web.post.model.PostVO">
-		insert into post (p_no, p_id, p_photo, p_content, p_filter) 
-		values (post_pno_seq.nextval, #{p_id}, #{p_photo}, #{p_content}, #{p_filter})
+		insert into post (p_no, p_id, p_photo, p_content) 
+		values (post_pno_seq.nextval, #{p_id}, #{p_photo}, #{p_content})
 	</insert>
 	
 	<!-- 포스트 리스트 가져오기  -->
@@ -31,13 +31,13 @@
 	</update>
 	
 	<!-- 댓글테이블에 입력 -->
-	<insert id="replyInsert" parameterType="com.sns.web.post.model.ReplyVO">
+	<insert id="insertReply" parameterType="com.sns.web.post.model.ReplyVO">
 		insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(reply_rno_seq.nextval, #{r_pno}, #{r_id}, #{r_content}, reply_rno_seq.currval, 0, 0)
 	</insert>
 	
 	<!-- 댓글목록 가져오기 -->
 	<select id="selectReply" parameterType="int"  resultType="com.sns.web.post.model.ReplyVO">
-		select * from reply where r_pno=#{r_pno} order by r_no desc
+		select * from reply where r_pno=#{r_pno} order by r_ref desc, r_seq asc
 	</select>
 	
 	<!-- 최대값 가져오기 -->
@@ -45,6 +45,63 @@
 		SELECT max(p_no) FROM post
 	</select>
 	
+	<select id="getReplycnt" parameterType="int" resultType="int">
+		SELECT p_replycnt FROM post where p_no=#{r_pno}
+	</select>
+	<select id="getReply" parameterType="int" resultType="com.sns.web.post.model.ReplyVO">
+		SELECT * FROM reply where r_no=#{r_no}
+	</select>
+	<update id="incrementSeq" parameterType="com.sns.web.post.model.ReplyVO">
+		update reply set r_seq = r_seq + 1 where r_ref = #{r_ref} and r_seq >= #{r_seq}
+	</update>
+	<insert id="insertRecomment" parameterType="com.sns.web.post.model.ReplyVO">
+		insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(reply_rno_seq.nextval, #{r_pno}, #{r_id}, #{r_content} , #{r_ref}, #{r_lev}, #{r_seq})
+	</insert>
+	
+	<!-- 댓글 수정 -->
+	<update id="updateRecomment" parameterType="com.sns.web.post.model.ReplyVO">
+		update reply set r_content=#{r_content} where r_no=#{r_no}
+	</update>
+	
+	
+	<update id="replycntDown" parameterType="int">
+		update post set p_replycnt=p_replycnt-1 where p_no=#{r_pno}
+	</update>
+	
+	<delete id="deleteRecomment" parameterType="int">
+		update reply set r_delete = 1 where r_no=#{r_no} 
+	</delete>
+	
+	<update id="likeUp" parameterType="int">
+		update post set p_like = p_like + 1 where p_no = #{p_no}
+	</update>
+	
+	<update id="likeDown" parameterType="int">
+		update post set p_like = p_like - 1 where p_no = #{p_no}
+	</update>
+	
+	<select id="getlikecnt" parameterType="int" resultType="int">
+		SELECT p_like FROM post where p_no=#{p_no}
+	</select>
+	<select id="searchId" parameterType="String" resultType="com.sns.web.post.model.PostVO">
+		<![CDATA[
+		select * from(
+			select rownum rnum, TT.* from (
+				select * from post where p_id like '%'||#{word}||'%' order by p_no desc
+			) TT where rownum <= 5
+		) where rnum >= 1
+		]]>
+	</select>
+	
+	<select id="searchIdScroll" parameterType="com.sns.web.post.model.Param" resultType="com.sns.web.post.model.PostVO">
+		<![CDATA[
+		select * from(
+			select rownum rnum, TT.* from (
+				select * from post where p_id like '%'||#{word}||'%' and p_no<#{startNo} order by p_no desc
+			) TT where rownum <= 5
+		) where rnum >= 1
+		]]>
+	</select>
 	
 	
 </mapper>

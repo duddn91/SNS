@@ -22,6 +22,7 @@
 	<resources mapping="/signImages/**" location="file:///C:/Users/Administrator/git/SNS_pj/src/main/webapp/resources/signImages/"/>
 	
 	
+		
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property value="/WEB-INF/views/" name="prefix"/>
 		<beans:property value=".jsp" name="suffix"/>
