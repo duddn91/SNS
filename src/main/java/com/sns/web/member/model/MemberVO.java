@@ -74,7 +74,6 @@ public class MemberVO {
 				+ m_email + ", m_birth=" + m_birth + ", m_phone=" + m_phone + ", m_profile=" + m_profile + "]";
 	}
 	
-	
-	
-	
 }
+	
+

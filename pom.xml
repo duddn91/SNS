@@ -26,7 +26,13 @@
 	</repositories>
 
 	<dependencies>
-	
+       <!-- 메일 관련 api -->    
+       <dependency>
+          <groupId>org.apache.commons</groupId>
+          <artifactId>commons-email</artifactId>
+          <version>1.5</version>
+       </dependency>
+	      
 		<!-- File Upload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>

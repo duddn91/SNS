@@ -41,9 +41,7 @@ $(document).ready(function() {
 	
 	//아이디 중복확인
 	$("#m_id").keyup(function() {
-		if($('#m_id').val().length > 0){
-			
-		} else if($('#m_id').val()==''){
+		if($('#m_id').val()==''){
 			$('#id_check').text('아이디를 입력하세요.');
 			$('#id_check').css('color', 'red');
 		} else if(idJ.test($('#m_id').val())!=true){
@@ -67,10 +65,12 @@ $(document).ready(function() {
 						if(idJ.test(m_id)){
 							$('#id_check').text('사용가능한 아이디 입니다.');
 							$('#id_check').css('color', 'blue');
+							$("#usercheck").attr("disabled", false);
 						}
 						else if(m_id==''){
 							$('#id_check').text('아이디를 입력해주세요.');
 							$('#id_check').css('color', 'red');
+							$("#usercheck").attr("disabled", true);
 						}
 						else if(idJ.test($('#m_id').val())){
 							console.log('false');
@@ -80,7 +80,8 @@ $(document).ready(function() {
 						else{
 							$('#id_check').text("아이디는 소문자와 숫자 4~12자리만 가능합니다.");
 							$('#id_check').css('color', 'red');
-						} 
+							$("#usercheck").attr("disabled", true);
+						}
 					}
 				}
 			});//ajax///
@@ -134,7 +135,7 @@ $(document).ready(function() {
 	}); //End of method /*
 	
 	
-	$('.submit_btn').click(function(){
+	$('#submit_btn').click(function(){
 		
 		var inval_Arr = new Array(6).fill(false);
 		
@@ -271,8 +272,6 @@ $(document).ready(function() {
 	
 });
 
-
-
 </script>
 <body>
 
@@ -325,14 +324,14 @@ $(document).ready(function() {
 				<h2 class="fs-hh">친구들의 사진과 동영상을 보려면 가입하세요.</h2>
 					
 					<div class="form-group">
-						<input aria-label="아이디를 입력해주세요." aria-required="true" 
-						 id="m_id" name="m_id" type="text" class="form-control" placeholder="아이디(영문,숫자 4-12자리)">
+						<input type="text" class="form-control"
+							id="m_id" name="m_id" placeholder="아이디" aria-required="true">
 						<div class="eheck_font" id="id_check"></div>
 					</div>
 	
 					<div class="form-group">
 						<input type="password"
-							class="form-control" id="m_pw" name="m_pw" placeholder="비밀번호(영문,숫자 4-15자리)">
+							class="form-control" id="m_pw" name="m_pw" placeholder="비밀번호(영문,숫자 3-20자리)">
 						<div class="eheck_font" id="pw_check"></div>
 					</div>
 	
@@ -366,7 +365,7 @@ $(document).ready(function() {
 					<div class="form-group">
 						<input
 							type="tel" class="form-control" id="m_phone" name="m_phone"
-							placeholder="핸드폰('-'없이 번호만 입력해주세요.)">
+							placeholder="휴대폰('-'없이 번호만 입력해주세요)">
 						<div class="eheck_font" id="phone_check"></div>
 					</div>
 					

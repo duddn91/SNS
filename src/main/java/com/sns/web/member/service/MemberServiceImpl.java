@@ -1,7 +1,7 @@
 package com.sns.web.member.service;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,6 +65,17 @@ public class MemberServiceImpl implements MemberService{
 		return memberDAO.loginCheck(memberVO);
 	}
 
+	@Override
+	public int checkEmail(String m_email) throws Exception {
+		logger.debug("MemberServiceImpld에 checkEmail() 실행");
+		return memberDAO.checkEmail(m_email);
+	}
+
+	@Override
+	public void findPW(Map<String, Object> map) throws Exception {
+		logger.debug("MemberServiceImpld에 findPW() 실행");
+		memberDAO.findPW(map);		
+	}
 	
 
 }
