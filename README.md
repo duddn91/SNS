@@ -3,10 +3,9 @@
 springFrame를 활용하여 sns개발
 
 <hr/>
-* 데이터베이스 테이블
-  * member_table
-  * post_table
-  * reply_table
+
+* 데이터베이스 테이블    
+
 
 <hr/>
 
