@@ -4,7 +4,10 @@ springFrame를 활용하여 sns개발
 
 <hr/>
 
-* 데이터베이스 테이블    
+* 데이터베이스 테이블
+  * member
+  * reply
+  * post
 
 
 <hr/>
