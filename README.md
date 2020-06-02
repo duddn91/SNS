@@ -3,13 +3,20 @@ sns project
 
 springFrame를 활용하여 sns개발
 
+<hr/>
+*회원가입 창
+  -정규식을 사용하여 아이디, 비밀번호, 생년월일, 이메일, 휴대폰번호 유효성 검사
+  -ajax를 사용하여 아이디 textfield에 값이 입력될 때 마다 중복확인
+
+*비밀번호 찾기
+  -이메일인증을 통해 아이디와 이메일이 같으면 임시비밀번호를 메일로 보내고 데이터 베이스에 저장
+
 
 
 
 
 
 <hr/>
-개발도구 
 <div width="800" >
   <img src="https://user-images.githubusercontent.com/60992456/83469665-4a438500-a4bb-11ea-96e2-6848bf6a42e8.png" width="100"/>
   <img src="https://user-images.githubusercontent.com/60992456/83471065-ad82e680-a4be-11ea-8354-9d8b943136e3.png" width="100"/>
