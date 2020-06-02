@@ -21,16 +21,20 @@ springFrame를 활용하여 sns개발
    * 이메일인증을 통해 아이디와 이메일이 같으면 임시비밀번호를 메일로 보내고 데이터 베이스에 저장
   
 * * *
+
 * 로그인
   * 데이터베이스 정보와 비교해 로그인시에 회원정보를 session에 저장
    
-  * * *
+
+* * *
+
 * 포스트 입력 
    * 이미지파일 업로드 기능
    * 이미지 입력시에 아이디+현재시간으로 이미지파일 이름이 생성되고 이미지 파일 이름을 데이터베이스에 저장
    * javascript를 사용해 content부분에 글이 입력시에만 저장가능
    
 * * *
+
 * 포스트 뷰
    * 글이 저장된 index 번호의 오름차순으로 게시물을 보여준다.
    * 윈도우 스크롤 이벤트로 무한스크롤 기능 구현(ajax 사용)
@@ -44,6 +48,7 @@ springFrame를 활용하여 sns개발
 
 
 <hr/>
+<div align="center"><h3>사용한 툴</h3></div>
 <div align="center">
   <img src="https://user-images.githubusercontent.com/60992456/83469665-4a438500-a4bb-11ea-96e2-6848bf6a42e8.png" width="100" style="margin:5px"/>
   <img src="https://user-images.githubusercontent.com/60992456/83471065-ad82e680-a4be-11ea-8354-9d8b943136e3.png" width="100" style="margin:5px"/>
