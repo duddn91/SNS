@@ -8,14 +8,13 @@
 
 	<insert id="insertMember" parameterType="com.sns.web.member.model.MemberVO">
 
-		INSERT INTO MEMBER (m_no, m_id, m_pw, m_email, m_birth, m_gender, m_phone, m_name)
+		INSERT INTO MEMBER (m_no, m_id, m_pw, m_email, m_birth, m_phone, m_name)
 		VALUES (
-			MEMBER_MNO_SEQ.NEXTVAL
+			MEMBER_M_NO_SEQ.NEXTVAL
 			, #{m_id}
 			, #{m_pw}
 			, #{m_email}
 			, #{m_birth}
-			, #{m_gender}
 			, #{m_phone}
 			, #{m_name}
 		)
@@ -31,7 +30,7 @@
 			m_id = #{m_id} 
 	</select> 
 	
-	<select id="getMemeberList" resultType="com.sns.web.member.model.MemberVO"> 
+	<select id="getMemberList" resultType="com.sns.web.member.model.MemberVO"> 
 		SELECT 
 			*
 		FROM 
@@ -72,4 +71,25 @@
 			m_id = #{m_id} AND m_pw = #{m_pw}
     </select>
 
+	<!-- 이메일 중복 검사 -->
+	<select id="checkEmail" parameterType="String" resultType="int">
+		SELECT
+			COUNT(*)
+		FROM
+			MEMBER
+		WHERE
+			m_email = #{m_email} 
+	</select>
+	
+	<!-- oje 추가 -->
+    <!-- 임시 비밀번호 변경 -->
+   	<update id="findPW" parameterType ="java.util.HashMap">
+   		UPDATE 
+			MEMBER
+		SET 
+			m_pw = #{m_pw} 
+		WHERE 
+			m_id = #{m_id} AND m_email = #{m_email}
+   	</update>
+	
 </mapper>

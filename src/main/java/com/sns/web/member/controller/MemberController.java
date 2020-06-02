@@ -1,5 +1,6 @@
 package com.sns.web.member.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sns.web.member.model.MemberVO;
 import com.sns.web.member.service.MemberService;
+import com.sns.web.post.model.PostVO;
 	
 @Controller
 @RequestMapping("/member")
@@ -101,12 +103,26 @@ public class MemberController {
     
     // 마이 페이지
  	@RequestMapping("/mypage")
- 	public String myPage(HttpSession session) throws Exception {
+ 	public String myPage(HttpSession session,  Model model) throws Exception {
  		
- 		logger.debug("memberController에 myPage() 실행");
+ 		logger.debug("memberController에 mypage() 실행");
+ 		MemberVO memberVO = (MemberVO) session.getAttribute("login");
+ 		String id = memberVO.getM_id();
+ 		ArrayList<PostVO> postList = memberService.getList(id);
+ 		model.addAttribute("postList", postList);
  		
  		return "member/mypage";
  	}
+ 	
+ // 프로필 편집
+  	@RequestMapping("/profileEdit")
+  	public String profileEdit(HttpSession session,  Model model) throws Exception {
+  		
+  		logger.debug("memberController에 profileEdit() 실행");
+  		
+  		return "member/profileEdit";
+  	}
+ 	
  	
  	// 이메일 유무검사
  	@RequestMapping("/checkEmail")
@@ -195,6 +211,6 @@ public class MemberController {
  			mail.send();
  		} catch (EmailException e) {e.printStackTrace();}		
  				
-  		return "member/findPW"; 
+  		return "redirect:/login"; 
   	}
 }

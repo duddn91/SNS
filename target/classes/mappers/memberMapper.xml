@@ -10,7 +10,7 @@
 
 		INSERT INTO MEMBER (m_no, m_id, m_pw, m_email, m_birth, m_phone, m_name)
 		VALUES (
-			MEMBER_MNO_SEQ.NEXTVAL
+			MEMBER_M_NO_SEQ.NEXTVAL
 			, #{m_id}
 			, #{m_pw}
 			, #{m_email}
@@ -91,5 +91,9 @@
 		WHERE 
 			m_id = #{m_id} AND m_email = #{m_email}
    	</update>
+	
+	<select id="getList" resultType="com.sns.web.post.model.PostVO" parameterType="String">
+		select * from post where p_id = #{id} order by p_no desc
+	</select>
 	
 </mapper>

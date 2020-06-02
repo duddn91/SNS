@@ -6,7 +6,7 @@
 	<!-- 업로드한 글 1건을 테이블에 저장한다. -->
 	<insert id="insert" parameterType="com.sns.web.post.model.PostVO">
 		insert into post (p_no, p_id, p_photo, p_content) 
-		values (post_pno_seq.nextval, #{p_id}, #{p_photo}, #{p_content})
+		values (post_p_no_seq.nextval, #{p_id}, #{p_photo}, #{p_content})
 	</insert>
 	
 	<!-- 포스트 리스트 가져오기  -->
@@ -32,7 +32,7 @@
 	
 	<!-- 댓글테이블에 입력 -->
 	<insert id="insertReply" parameterType="com.sns.web.post.model.ReplyVO">
-		insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(reply_rno_seq.nextval, #{r_pno}, #{r_id}, #{r_content}, reply_rno_seq.currval, 0, 0)
+		insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(reply_r_no_seq.nextval, #{r_pno}, #{r_id}, #{r_content}, reply_r_no_seq.currval, 0, 0)
 	</insert>
 	
 	<!-- 댓글목록 가져오기 -->
@@ -55,7 +55,7 @@
 		update reply set r_seq = r_seq + 1 where r_ref = #{r_ref} and r_seq >= #{r_seq}
 	</update>
 	<insert id="insertRecomment" parameterType="com.sns.web.post.model.ReplyVO">
-		insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(reply_rno_seq.nextval, #{r_pno}, #{r_id}, #{r_content} , #{r_ref}, #{r_lev}, #{r_seq})
+		insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(reply_r_no_seq.nextval, #{r_pno}, #{r_id}, #{r_content} , #{r_ref}, #{r_lev}, #{r_seq})
 	</insert>
 	
 	<!-- 댓글 수정 -->
