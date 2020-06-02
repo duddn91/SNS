@@ -41,7 +41,7 @@ springFrame를 활용하여 sns개발
 
 
 <hr/>
-<div align="center" style="margin:5px" >
+<div align="center" style="padding:5px" >
   <img src="https://user-images.githubusercontent.com/60992456/83469665-4a438500-a4bb-11ea-96e2-6848bf6a42e8.png" width="100"/>
   <img src="https://user-images.githubusercontent.com/60992456/83471065-ad82e680-a4be-11ea-8354-9d8b943136e3.png" width="100"/>
   <img src="https://user-images.githubusercontent.com/60992456/83470858-29306380-a4be-11ea-864a-b6e28bca1e51.png" width="100"/>
