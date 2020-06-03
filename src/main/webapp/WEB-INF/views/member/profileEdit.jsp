@@ -54,8 +54,8 @@
 
         <div class="BvMHM ">
          <ul class="wW1cu">
-            <li><a href="profileEdit.jsp" class="font1">프로필 편집</a></li>
-            <li><a href="changePassword.jsp" class="font1">비밀번호 변경</a></li>
+            <li><a href="/member/profileEdit" class="font1">프로필 편집</a></li>
+            <li><a href="/member/changePassword" class="font1">비밀번호 변경</a></li>
          </ul>
          <article class="PVkFi">
             <div class="C_9MP">
@@ -76,21 +76,14 @@
 				</div>
 				<button class="sqdOP yWX7d y3zKF" type="button">프로필 사진 바꾸기</button>
 			</div>
-			<form class="kWXsT" method="POST">
-				<div class="eE-OA">
-					<aside class="sxIVS">
-						<label for="m_name">이름</label>
-					</aside>
-					<div class="ada5V">
-						<input aria-required="false" id="m_name" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
-					</div>
-				</div>
+			<form class="kWXsT" method="POST" action="/member/memberUpdate">
+				
 				<div class="eE-OA">
 					<aside class="sxIVS  ">
 						<label for="m_Username">사용자 이름</label>
 					</aside>
 					<div class="ada5V">
-						<input aria-required="true" id="m_Username" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
+						<input aria-required="true" name="m_name" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
 					</div>
 				</div>
 				<div class="eE-OA">
@@ -98,7 +91,7 @@
 						<label for="m_email">이메일</label>
 					</aside>
 					<div class="ada5V">
-						<input aria-required="false" id="m_email" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
+						<input aria-required="false" name="m_email" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
 					</div>
 				</div>
 				<div class="eE-OA">
@@ -106,7 +99,7 @@
 						<label for="m_phone">전화번호</label>
 					</aside>
 					<div class="ada5V">
-						<input aria-required="false" id="m_phone" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
+						<input aria-required="false" name="m_phone" type="text" class="JLJ-B zyHYP" value="" size=30><br /><br />
 					</div>
 				</div>
 					<div class="Igw0E IwRSH eGOV_ _4EzTm aGBdT" style="width: 100%; max-width: 355px;">
@@ -121,7 +114,7 @@
 					</aside>
 					<div class="ada5V">
 						<div class="fi8zo">
-							<button class="sqdOP L3NKy y3zKF" disabled="" type="button">제출</button>
+							<button class="sqdOP L3NKy y3zKF" type="submit">제출</button>
 						</div>
 					</div>
 				</div>

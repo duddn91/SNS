@@ -17,7 +17,16 @@
     <link rel="shortcut icon" href="/imgs/instagram.png">
 
 </head>
+<script type="text/javascript">
+function logout() {
+	session.removeAttribute("m_id");
+	response.sendRedirect("../login.jsp");
+}
+</script>
 <body>
+<form name="logout" action="logout.do" method="POST">
+	<input type="hidden">
+</form>
 	
 <section id="container">
 
@@ -64,7 +73,7 @@
                 <div class="detail">
                     <div class="top">
                         <div class="user_name">${login.m_id}</div>
-                        <a href="#" class="logout">로그아웃</a>
+                        <a href="/member/logout" class="logout" id="logout">로그아웃</a>
                         <a href="/member/profileEdit" class="profile"><div class="profile_edit_icon"></div></a>
                     </div>
 
@@ -83,7 +92,7 @@
                         </li>
                     </ul>
                     <p class="about">
-                        <h1 class="nick_name">kindtigerrr</h1>
+                        <h1 class="nick_name">${login.m_name }</h1>
                         <span class="book_mark">bookmark</span>
                     </p>
 
