@@ -6,7 +6,8 @@ CREATE TABLE "POST" (
     "P_PHOTO" VARCHAR2(100 BYTE), 
     "P_CONTENT" VARCHAR2(2000 BYTE) DEFAULT NULL NOT NULL, 
     "P_REGDATE" TIMESTAMP (6) DEFAULT sysdate NOT NULL, 
-    "P_REPLYCNT" NUMBER(*,0) DEFAULT 0 NOT NULL, 
+    "P_REPLYCNT" NUMBER(*,0) DEFAULT 0 NOT NULL,
+    "P_LIKE" NUMBER(*,0) DEFAULT 0,
     PRIMARY KEY ("P_NO")
   );
   
@@ -38,7 +39,8 @@ create sequence post_p_no_seq;
 	"R_REGDATE" TIMESTAMP (6) DEFAULT sysdate, 
 	"R_REF" NUMBER(*,0), 
 	"R_LEV" NUMBER(*,0), 
-	"R_SEQ" NUMBER(*,0), 
+	"R_SEQ" NUMBER(*,0),
+  "R_DELETE" NUMBER(*,0) DEFAULT 0,
   PRIMARY KEY ("R_NO")
   );
   
@@ -62,10 +64,10 @@ insert into reply(r_no, r_pno, r_id, r_content, r_ref, r_lev, r_seq) values(repl
 	"M_ID" VARCHAR2(20 BYTE) NOT NULL, 
 	"M_PW" VARCHAR2(20 BYTE) NOT NULL, 
 	"M_EMAIL" VARCHAR2(40 BYTE), 
-	"M_BIRTH" NUMBER(*,0), 
-	"M_GENDER" CHAR(1 BYTE), 
+	"M_BIRTH" NUMBER(*,0),
 	"M_PHONE" VARCHAR2(20 BYTE), 
 	"M_PROFILE" VARCHAR2(20 BYTE),
+  "M_NAME" VARCHAR2(20 BYTE),
   PRIMARY KEY ("M_NO")
   );
   
