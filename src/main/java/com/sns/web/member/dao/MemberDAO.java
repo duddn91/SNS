@@ -17,10 +17,11 @@ public interface MemberDAO {
 	public MemberVO getMemberInfo(String m_id) throws Exception;
 	public int checkId(String m_id) throws Exception;
 	public int insertMember(MemberVO memberVO) throws Exception;
-	public int updateMember(MemberVO memberVO) throws Exception;
+	public void updateMember(MemberVO memberVO) throws Exception;
 	public int deleteMember(int m_no) throws Exception;
 	public MemberVO loginCheck(MemberVO memberVO) throws Exception;
 	public int checkEmail(String m_email) throws Exception;
 	public void findPW(Map<String, Object> map) throws Exception;
 	public ArrayList<PostVO> getList(String id);
+	public void updatePassword(MemberVO vo);
 }

@@ -44,9 +44,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int updateMember(MemberVO memberVO) throws Exception {
+	public void updateMember(MemberVO memberVO) throws Exception {
 		logger.debug("MemberServiceImpld에 updateMember() 실행");
-		return memberDAO.updateMember(memberVO);
+		memberDAO.updateMember(memberVO);
 	}
 
 	@Override
@@ -84,6 +84,13 @@ public class MemberServiceImpl implements MemberService{
 		logger.debug("MemberServiceImpld에 getList() 실행");
 			
 		return memberDAO.getList(id);
+	}
+
+	@Override
+	public void updatePassword(MemberVO vo) throws Exception {
+		logger.debug("MemberServiceImpld에 updatePassword() 실행");
+		memberDAO.updatePassword(vo);
+		
 	}
 	
 

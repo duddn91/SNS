@@ -51,9 +51,9 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public int updateMember(MemberVO memberVO) throws Exception {
+	public void updateMember(MemberVO memberVO) throws Exception {
 		logger.debug("MemberDAOImpl에 updateMember() 실행 ");
-		return sqlSession.update(NAMESPACE+".updateMember", memberVO);
+		sqlSession.update(NAMESPACE+".updateMember", memberVO);
 	}
 
 	@Override
@@ -92,6 +92,14 @@ public class MemberDAOImpl implements MemberDAO{
 		logger.debug("MemberDAOImpl에 getList() 실행 ");
 		List<PostVO> vo = sqlSession.selectList(NAMESPACE + ".getList", id);
 		return (ArrayList<PostVO>) vo;
+	}
+
+
+	@Override
+	public void updatePassword(MemberVO vo) {
+		logger.debug("MemberDAOImpl에 updatePassword() 실행 ");
+		sqlSession.update(NAMESPACE+".updatePassword", vo);
+		
 	}
 
 
