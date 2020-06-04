@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/imgs/instagram.png">
     
 <style type="text/css">

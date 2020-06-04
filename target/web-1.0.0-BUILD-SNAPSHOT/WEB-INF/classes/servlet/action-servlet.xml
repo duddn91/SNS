@@ -17,9 +17,10 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/css/**" location="/WEB-INF/css/" />
 	<resources mapping="/imgs/**" location="/WEB-INF/imgs/" />
-	<resources mapping="/profile/**" location="/resources/profile/"/>
-	<resources mapping="/photo/**" location="/resources/PostingImages/"/>
-	<resources mapping="/signImages/**" location="/resources/signImages/"/>
+	<resources mapping="/js/**" location="/WEB-INF/js/" />
+	<resources mapping="/profile/**" location="file:///C:/Users/Administrator/git/SNS/src/main/webapp/resources/profile/"/>
+	<resources mapping="/photo/**" location="file:///C:/Users/Administrator/git/SNS/src/main/webapp/resources/PostingImages/"/>
+	<resources mapping="/signImages/**" location="file:///C:/Users/Administrator/git/SNS/src/main/webapp/resources/signImages/"/>
 	
 	
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -33,7 +34,7 @@
 		
 	<!-- 포스팅 이미지 저장 경로 -->
 	<beans:bean class="java.lang.String" id="uploadPath">
-		<beans:constructor-arg value="\resources\PostingImages"/>
+		<beans:constructor-arg value="C:/Users/Administrator/git/SNS/src/main/webapp/resources/PostingImages/"/>
 	</beans:bean>
 	
 	<!-- 다중 이미지 저장? -->	

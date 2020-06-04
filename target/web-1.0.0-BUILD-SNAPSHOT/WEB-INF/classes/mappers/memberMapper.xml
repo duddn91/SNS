@@ -92,4 +92,8 @@
 			m_id = #{m_id} AND m_email = #{m_email}
    	</update>
 	
+	<select id="getList" resultType="com.sns.web.post.model.PostVO" parameterType="String">
+		select * from post where p_id = #{id} order by p_no desc
+	</select>
+	
 </mapper>

@@ -160,7 +160,8 @@
 		var btn1 = document.getElementById("update_btn"+r_no);
 		var btn2 = document.getElementById("delete_btn"+r_no);
 		if(btn1.innerText == "수정"){
-			container.innerHTML = "<input id='updateRecomment"+r_no+"' type='text' data-name='"+text+"' placeholder='"+text+"' style='width:400px;border: none;background: aliceblue;'>"
+			container.innerHTML = "<input id='updateRecomment"+r_no+"' type='text' data-name='"+text+"' placeholder='"+text
+								+	"' style='width:400px;border: none;background: aliceblue;'>"
 			btn1.innerHTML = "완료";
 			btn2.innerHTML = "취소";
 		}else{
@@ -213,7 +214,7 @@
 			btn.innerHTML = "답글";
 		}
 	}
-+
+
 	/* 대댓글 텍스트상자가 열렸을때 포커스를 맞춰준다. */
 	function focus(r_no){
 		document.getElementById("recommetText"+r_no).focus();
