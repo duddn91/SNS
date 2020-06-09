@@ -13,8 +13,8 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521/xepdb1" />       
-        <property name="username" value="byun"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />       
+        <property name="username" value="koreait"></property>
         <property name="password" value="0000"></property>
 	</bean>  
 

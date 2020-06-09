@@ -1,5 +1,6 @@
 package com.sns.web.member.dao;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sns.web.member.model.MemberVO;
 import com.sns.web.member.service.MemberService;
+import com.sns.web.post.model.PostVO;
 
 /**
  *	MemberDAO를 상속받아 memberMapper.xml에 접근해서
@@ -49,9 +51,9 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public int updateMember(MemberVO memberVO) throws Exception {
+	public void updateMember(MemberVO memberVO) throws Exception {
 		logger.debug("MemberDAOImpl에 updateMember() 실행 ");
-		return sqlSession.update(NAMESPACE+".updateMember", memberVO);
+		sqlSession.update(NAMESPACE+".updateMember", memberVO);
 	}
 
 	@Override
@@ -82,6 +84,21 @@ public class MemberDAOImpl implements MemberDAO{
 	public void findPW(Map<String, Object> map) throws Exception{
 		logger.debug("MemberDAOImpl에 findPW() 실행 ");
 		sqlSession.update(NAMESPACE+".findPW", map);
+		
+	}
+
+	@Override
+	public ArrayList<PostVO> getList(String id) {
+		logger.debug("MemberDAOImpl에 getList() 실행 ");
+		List<PostVO> vo = sqlSession.selectList(NAMESPACE + ".getList", id);
+		return (ArrayList<PostVO>) vo;
+	}
+
+
+	@Override
+	public void updatePassword(MemberVO vo) {
+		logger.debug("MemberDAOImpl에 updatePassword() 실행 ");
+		sqlSession.update(NAMESPACE+".updatePassword", vo);
 		
 	}
 

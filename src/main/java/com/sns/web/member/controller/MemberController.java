@@ -1,5 +1,6 @@
 package com.sns.web.member.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sns.web.member.model.MemberVO;
 import com.sns.web.member.service.MemberService;
+import com.sns.web.post.model.PostVO;
 	
 @Controller
 @RequestMapping("/member")
@@ -98,16 +100,75 @@ public class MemberController {
     	return "member/findpw";
     }
     
+    // 로그아웃 처리하는 부분
+    @RequestMapping(value="/logout")
+    public String handleRequestLogout(HttpSession session) throws Exception {
+    	session.invalidate();
+    	
+    	return "redirect:/login";
+    }
     
     // 마이 페이지
  	@RequestMapping("/mypage")
- 	public String myPage(HttpSession session) throws Exception {
+ 	public String myPage(HttpSession session,  Model model) throws Exception {
  		
- 		logger.debug("memberController에 myPage() 실행");
+ 		logger.debug("memberController에 mypage() 실행");
+ 		MemberVO memberVO = (MemberVO) session.getAttribute("login");
+ 		String id = memberVO.getM_id();
+ 		ArrayList<PostVO> postList = memberService.getList(id);
+ 		model.addAttribute("postList", postList);
  		
  		return "member/mypage";
  	}
  	
+ // 프로필 편집
+  	@RequestMapping("/profileEdit")
+  	public String profileEdit(HttpSession session,  Model model) throws Exception {
+  		
+  		logger.debug("memberController에 profileEdit() 실행");
+  		
+  		return "member/profileEdit";
+  	}
+ 	
+  	@RequestMapping(value="/memberUpdate")
+ 	public String memberUpdate(HttpSession session,  Model model, HttpServletRequest request) throws Exception {
+ 		logger.debug("memberController에 profileEdit() 실행");
+ 		
+ 		 String m_name = (String) request.getParameter("m_name"); 
+ 		 String m_email = (String) request.getParameter("m_email"); 
+ 		 String m_phone = (String)request.getParameter("m_phone");
+ 		 
+ 		 MemberVO vo = (MemberVO)session.getAttribute("login");
+ 		  
+ 		 vo.setM_name(m_name); 
+ 		 vo.setM_email(m_email); 
+ 		 vo.setM_phone(m_phone);
+ 		 System.out.println(vo);
+ 		
+ 		memberService.updateMember(vo);
+ 		
+ 		return "member/mypage";
+ 	}
+  	
+//	비밀번호 변경
+ 	@RequestMapping("/changePassword")
+ 	public String changePassword(HttpSession session, Model model, HttpServletRequest request) throws Exception {
+ 		logger.debug("memberController에 changePassword() 실행");
+ 		return "member/changePassword";
+ 	}
+ 	
+ 	@RequestMapping("/member/passwordUpdate")
+ 	public String passwordUpdate(HttpSession session, Model model, HttpServletRequest request) throws Exception {
+ 		logger.debug("memberController에 changePassword() 실행");
+  		String m_pw = (String) request.getParameter("m_newPassword");
+		MemberVO vo = (MemberVO) session.getAttribute("login");
+		vo.setM_pw(m_pw);
+		memberService.updatePassword(vo);
+ 		return "member/profile";
+ 	}
+  	
+  	
+  	
  	// 이메일 유무검사
  	@RequestMapping("/checkEmail")
  	@ResponseBody
@@ -195,6 +256,6 @@ public class MemberController {
  			mail.send();
  		} catch (EmailException e) {e.printStackTrace();}		
  				
-  		return "member/findPW"; 
+  		return "redirect:/login"; 
   	}
 }

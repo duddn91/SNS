@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>Stargram</title>
@@ -23,11 +24,7 @@
 //아이디 정규식
 var idJ = /^[a-z0-9][a-z0-9]{3,11}$/;
 // 비밀번호 정규식
-<<<<<<< HEAD
-var pwJ = /^[A-Za-z0-9]{4,15}$/;
-=======
 var pwJ = /^[A-Za-z0-9]{4,12}$/;
->>>>>>> branch 'master' of https://github.com/duddn91/SNS.git
 
 
 $(document).ready(function() {
@@ -103,7 +100,6 @@ $(document).ready(function() {
                 <h1 class="sprite_insta_big_logo title"></h1>
 
                 <form action="member/login" method="post">
-                <form action="member/login">
                		<div class="form-group">
 	                   <p class="login_user_name">
 	                   	<input type="text" id="m_id" name="m_id" placeholder="ID" >
@@ -131,7 +127,7 @@ $(document).ready(function() {
 			            </div>
 		       		</div>
 		       		
-		       		<a class="_2Lks6" href="#">비밀번호를 잊으셨나요?</a>
+		       		<a class="_2Lks6" href="member/findpw">비밀번호를 잊으셨나요?</a>
                 </form>
                 
 	       		

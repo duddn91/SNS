@@ -1,5 +1,6 @@
 package com.sns.web.member.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.sns.web.member.dao.MemberDAO;
 import com.sns.web.member.model.MemberVO;
+import com.sns.web.post.model.PostVO;
 /**
  * 	MemberService를 상속받아 비즈니스 로직을 작성하는 클래스
  *  MemberDAO로 매개변수를 전달해주고 받아온 값을 controller로 리턴해준다.
@@ -42,9 +44,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int updateMember(MemberVO memberVO) throws Exception {
+	public void updateMember(MemberVO memberVO) throws Exception {
 		logger.debug("MemberServiceImpld에 updateMember() 실행");
-		return memberDAO.updateMember(memberVO);
+		memberDAO.updateMember(memberVO);
 	}
 
 	@Override
@@ -75,6 +77,20 @@ public class MemberServiceImpl implements MemberService{
 	public void findPW(Map<String, Object> map) throws Exception {
 		logger.debug("MemberServiceImpld에 findPW() 실행");
 		memberDAO.findPW(map);		
+	}
+
+	@Override
+	public ArrayList<PostVO> getList(String id) {
+		logger.debug("MemberServiceImpld에 getList() 실행");
+			
+		return memberDAO.getList(id);
+	}
+
+	@Override
+	public void updatePassword(MemberVO vo) throws Exception {
+		logger.debug("MemberServiceImpld에 updatePassword() 실행");
+		memberDAO.updatePassword(vo);
+		
 	}
 	
 
